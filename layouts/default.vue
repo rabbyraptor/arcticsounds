@@ -1,6 +1,6 @@
 <template>
   <div>
-    <header>
+    <header class="main-header">
       <navigation-menu></navigation-menu>
     </header>
     <nuxt />

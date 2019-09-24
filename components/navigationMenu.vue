@@ -19,9 +19,3 @@
     </ul>
   </nav>
 </template>
-
-<style scoped>
-a{
-    color:#7e959c;
-}
-</style>
