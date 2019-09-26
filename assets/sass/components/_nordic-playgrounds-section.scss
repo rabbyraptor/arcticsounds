@@ -1,0 +1,32 @@
+.nordic-playgrounds-section {
+  width: 100%;
+  padding: 5% 10%;
+
+  h1 {
+    font-size: 3em;
+    color: $white;
+    margin-bottom: 1em;
+    text-transform: uppercase;
+  }
+
+  h2 {
+    font-size: 2em;
+    color: $white;
+    margin-bottom: 1em;
+    text-transform: uppercase;
+  }
+
+  p, ul{
+    font-size: 22px;
+    text-align: left;
+    color:$white;
+    line-height: 1.3em;
+  }
+  ul{
+    padding:.5em;
+    padding-left:22px;
+  }
+  li{
+    list-style-type: initial;
+  }
+}
