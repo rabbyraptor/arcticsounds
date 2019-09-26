@@ -72,7 +72,7 @@ html {
 .container {
   margin: 0 auto;
   text-align: center;
-  padding:300px 5% 0 5%;
+  padding-top:300px;
   width: 100%;
 }
 </style>

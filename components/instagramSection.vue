@@ -17,9 +17,6 @@
           <img :src="props.feed.images.low_resolution.url" />
         </a>
       </template>
-      <!--       <template slot="error" slot-scope="props">
-        <div class="fancy-alert">{{ props.error.error_message }}</div>
-      </template>-->
     </vue-instagram>
   </div>
 </template>

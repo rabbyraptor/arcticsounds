@@ -1,6 +1,6 @@
 .instagram-section {
   width: 100%;
-  padding:5%;
+  padding:5% 0;
 
   h2{
     color:$white;
@@ -17,11 +17,11 @@
   .ig-grid {
     width: 100%;
     display: grid;
-    grid-template-rows: repeat(3, 30%);
-    grid-template-columns: repeat(3, 30%);
+    grid-template-rows: repeat(3, 28%);
+    grid-template-columns: repeat(3, 28%);
     justify-content: center;
-    column-gap: 4px;
-    row-gap: 4px;
+    column-gap: 3%;
+    row-gap: 3%;
   }
 }
 
