@@ -16,8 +16,8 @@ export default {
       socialIcons: [
         { name: "Facebook", link: "https://www.facebook.com/arcticsoundsfestival/", icon: "&#xe093;", target: "_blank" },
         { name: "Instagram", link: "https://www.instagram.com/arctic_sounds/", icon: "&#xe09a;", target: "_blank" },
-        { name: "YouTube", link: "/whosbehind", icon: "&#xe0a3;", target: "_blank" },
-        { name: "Mail", link: "/tickets", icon: "&#xe076;", target: "_blank" }
+        { name: "YouTube", link: "https://www.youtube.com/channel/UCijkw7QJJgnOHI3LbMuLFuA", icon: "&#xe0a3;", target: "_blank" },
+        { name: "Mail", link: "mailto:info@arcticsounds.gl", icon: "&#xe076;", target: "_blank" }
       ]
     };
   }
