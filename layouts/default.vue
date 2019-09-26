@@ -4,31 +4,18 @@
     <main class="container">
       <nuxt />
     </main>
-    <footer class="main-footer">
-      <contact-info>
-        <li>
-          <h3>Arctic Sounds</h3>
-        </li>
-      </contact-info>
-      <navigation-menu>
-        <li>
-          <h3>Sitemap</h3>
-        </li>
-      </navigation-menu>
-    </footer>
+    <main-footer />
   </div>
 </template>
 
 <script>
 import mainHeader from "~/components/mainHeader.vue";
-import contactInfo from "~/components/contactInfo.vue";
-import navigationMenu from "~/components/navigationMenu.vue";
+import mainFooter from "~/components/mainFooter.vue";
 
 export default {
   components: {
     mainHeader,
-    navigationMenu,
-    contactInfo
+    mainFooter,
   }
 };
 </script>
@@ -85,7 +72,7 @@ html {
 .container {
   margin: 0 auto;
   text-align: center;
-  padding-top: 300px;
-  width:100%;
+  padding:300px 5% 0 5%;
+  width: 100%;
 }
 </style>
