@@ -18,7 +18,7 @@ export default {
   mounted() {
     var header = document.querySelector("header");
     var options = {
-      offset: 175,
+      offset: 150,
       tolerance: {
         up: 300,
         down: 10
