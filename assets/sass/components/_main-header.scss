@@ -1,5 +1,95 @@
 .main-header {
-  a {
-    color: $font-light-grey;
+  height: 300px;
+  width: 100%;
+  background-color: $black;
+  font-size: 30px;
+  display: flex;
+  justify-content: flex-end;
+  position: fixed;
+
+  .logo {
+    height: 336px;
+    position: absolute;
+    left: -1.5%;
+    margin-top: 117px;
+    opacity: 0.8;
+  }
+
+  nav {
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    margin: 175px 5% 0 5%;
+
+    ul {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    li {
+      margin: 0 16px;
+    }
+
+    li:first-of-type {
+      margin-left: 0;
+    }
+
+    li:last-of-type {
+      margin-right: 0;
+    }
+
+    a {
+      color: $font-light-grey;
+      text-transform: uppercase;
+      padding: 0 0.2em;
+      transition: color 0.2s;
+    }
+
+    a:hover {
+      color: tint($font-light-grey, 65%);
+      transition: color 0.2s;
+    }
+  }
+
+  .navigation-menu-sub {
+    margin-top: 5px;
+
+    a,
+    .slash {
+      font-size: 16px;
+      color: $font-light-grey;
+    }
+
+    a.icon {
+      font-family: "ElegantIcons";
+    }
+  }
+}
+
+.headroom {
+  transition: height 200ms linear;
+  nav,
+  .navigation-menu-sub {
+    transition: margin 0.2s linear;
+  }
+  .logo {
+    transition: all 0.2s linear;
+  }
+}
+.headroom--pinned {
+}
+.headroom--unpinned {
+  position: fixed;
+  height: 104px;
+  .logo {
+    height: 82px;
+    margin-top: 10px;
+    left: 5%;
+  }
+  nav {
+    margin-top: 18px;
+  }
+  .navigation-menu-sub {
+    margin-top: -6px;
   }
 }

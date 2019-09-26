@@ -1,14 +1,15 @@
 <template>
   <section class="container">
-    
+    <frontpage-grid></frontpage-grid>
   </section>
 </template>
 
 <script>
+import frontpageGrid from "~/components/frontpageGrid.vue";
 
 export default {
   components: {
-    
+    frontpageGrid
   }
 }
 </script>

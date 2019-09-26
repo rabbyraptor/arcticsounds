@@ -5,7 +5,7 @@ let modules = [
   'nuxt-imagemin'
 ];
 
-if(APP_ENV !== 'production') {
+if (APP_ENV !== 'production') {
   modules.push(['nuxt-robots-module', {
     /* module options */
     UserAgent: '*',
@@ -24,10 +24,11 @@ module.exports = {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Arctic Sounds Festival'}
+      { hid: 'description', name: 'description', content: 'Arctic Sounds Festival' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }/* ,
+      { rel: 'stylesheet', href: '/fonts/all.css' } */
     ]
   },
 

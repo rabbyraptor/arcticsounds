@@ -1,26 +1,40 @@
 <template>
   <div>
-    <header class="main-header">
-      <navigation-menu></navigation-menu>
-    </header>
+    <main-header/>
     <nuxt />
+    <footer class="main-footer">
+      <contact-info>
+        <li>
+          <h3>Arctic Sounds</h3>
+        </li>
+      </contact-info>
+      <navigation-menu>
+        <li>
+          <h3>Sitemap</h3>
+        </li>
+      </navigation-menu>
+    </footer>
   </div>
 </template>
 
 <script>
-import navigationMenu from '~/components/navigationMenu.vue'
+import mainHeader from "~/components/mainHeader.vue";
+import contactInfo from "~/components/contactInfo.vue";
+import navigationMenu from "~/components/navigationMenu.vue";
 
-export default{
-  components:{
-    navigationMenu
+export default {
+  components: {
+    mainHeader,
+    navigationMenu,
+    contactInfo
   }
-}
+};
 </script>
 
 <style>
 html {
-  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif;
   font-size: 16px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;

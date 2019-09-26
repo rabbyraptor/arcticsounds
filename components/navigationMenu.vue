@@ -1,21 +1,24 @@
 <template>
-  <nav>
-    <ul>
-      <li>
-        <a href="#">Line-up</a>
-      </li>
-      <li>
-        <a href="#">Program</a>
-      </li>
-      <li>
-        <a href="#">Who's Behind</a>
-      </li>
-      <li>
-        <a href="#">Tickets</a>
-      </li>
-      <li>
-        <a href="#">Backstage</a>
-      </li>
-    </ul>
-  </nav>
+  <ul>
+    <slot></slot>
+    <li v-for="page in pages" :key="page.name">
+      <nuxt-link :to="page.link">{{ page.name }}</nuxt-link>
+    </li>
+  </ul>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      pages: [
+        { name: "Line-up", link: "/" },
+        { name: "Program", link: "/program" },
+        { name: "Who's Behind", link: "/whosbehind" },
+        { name: "Tickets", link: "/tickets" },
+        { name: "Backstage", link: "/backstage" }
+      ]
+    };
+  }
+};
+</script>

@@ -1,2 +1,14 @@
 /* Saira Stencil One */
 @import url('https://fonts.googleapis.com/css?family=Saira+Stencil+One&display=swap');
+@font-face{
+    font-family: 'AG-Stencil';
+    src: 
+        local('AG-Stencil'),
+        url(/fonts/AG-Stencil.otf);
+}
+@font-face{
+    font-family: 'ElegantIcons';
+    src: 
+        local('ElegantIcons-Regular'),
+        url(/fonts/ElegantIcons.woff);
+}
