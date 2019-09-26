@@ -13,6 +13,7 @@
   "dependencies": {
     "headroom.js": "^0.10.3",
     "nuxt": "^2.9.2",
+    "vue-faq-accordion": "^1.2.1",
     "vue-instagram": "^2.0.1"
   },
   "devDependencies": {

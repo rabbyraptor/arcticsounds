@@ -13,10 +13,10 @@ export default {
     return {
       pages: [
         { name: "Line-up", link: "/" },
-        { name: "Program", link: "/program" },
-        { name: "Who's Behind", link: "/whosbehind" },
-        { name: "Tickets", link: "/tickets" },
-        { name: "Backstage", link: "/backstage" }
+        { name: "Program", link: "program" },
+        { name: "Who's Behind", link: "whosbehind" },
+        { name: "Tickets", link: "tickets" },
+        { name: "Backstage", link: "backstage" }
       ]
     };
   }
