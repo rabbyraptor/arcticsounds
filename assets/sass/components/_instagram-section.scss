@@ -1,0 +1,37 @@
+.instagram-section {
+  width: 100%;
+  padding:5%;
+
+  h2{
+    color:$white;
+    font-size:32px;
+    text-transform: uppercase;
+    margin-bottom:10px;
+  }
+
+  .ig-logo {
+    width: 100%;
+    margin-bottom:2em;
+  }
+
+  .ig-grid {
+    width: 100%;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: space-between;
+    column-gap: 1em;
+    row-gap: 1em;
+  }
+}
+
+.ig-img {
+  background-color: $white;
+  display: flex;
+
+  img {
+    align-self: center;
+    width: 100%;
+    height: auto;
+  }
+}

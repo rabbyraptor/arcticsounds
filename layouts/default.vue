@@ -81,4 +81,11 @@ html {
   color: #fff;
   background-color: #35495e;
 }
+
+.container {
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 300px;
+  width:100%;
+}
 </style>
