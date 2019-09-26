@@ -1,7 +1,9 @@
 <template>
   <div>
-    <main-header/>
-    <nuxt />
+    <main-header />
+    <main class="container">
+      <nuxt />
+    </main>
     <footer class="main-footer">
       <contact-info>
         <li>

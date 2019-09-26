@@ -1,17 +1,24 @@
 <template>
-  <section class="container">
-    <frontpage-grid></frontpage-grid>
-  </section>
+  <div>
+    <section>
+      <frontpage-grid />
+    </section>
+    <section>
+      <iceberg-section />
+    </section>
+  </div>
 </template>
 
 <script>
 import frontpageGrid from "~/components/frontpageGrid.vue";
+import icebergSection from "~/components/icebergSection.vue";
 
 export default {
   components: {
-    frontpageGrid
+    frontpageGrid,
+    icebergSection
   }
-}
+};
 </script>
 
 <style>
@@ -22,6 +29,6 @@ export default {
   justify-content: center;
   align-items: center;
   text-align: center;
+  padding-top: 300px;
 }
-
 </style>
