@@ -18,8 +18,11 @@ export default {
   mounted() {
     var header = document.querySelector("header");
     var options = {
-      offset: 10,
-      tolerance: 10
+      offset: 175,
+      tolerance: {
+        up: 300,
+        down: 10
+      }
     };
     var headroom = new Headroom(header, options);
     headroom.init();
