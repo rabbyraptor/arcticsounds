@@ -27,8 +27,7 @@ module.exports = {
       { hid: 'description', name: 'description', content: 'Arctic Sounds Festival' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }/* ,
-      { rel: 'stylesheet', href: '/fonts/all.css' } */
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
 
