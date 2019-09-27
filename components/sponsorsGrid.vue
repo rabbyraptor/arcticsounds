@@ -5,7 +5,7 @@
       <p>A million thanks to our sponsors, without whom none of this would be possible!</p>
     </span>
     <div class="sponsors">
-      <a class="sponsor-image" v-for="sponsor in sponsorsList" :key="sponsor.title" href="#">
+      <a class="sponsor-image" v-for="sponsor in sponsorsList" :key="sponsor.title" :href="sponsor.link" target="_blank">
         <img :src="sponsor.img" :alt="sponsor.title" />
       </a>
     </div>
