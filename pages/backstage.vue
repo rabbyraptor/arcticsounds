@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import faqSection from '../components/faq-section'
+import faqSection from '../components/faqSection'
 
 export default {
   components: {
