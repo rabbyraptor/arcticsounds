@@ -12,10 +12,10 @@ export default {
   data() {
     return {
       pages: [
-        { name: "Line-up", link: "/" },
+        { name: "Line-up", link: "lineup" },
         { name: "Program", link: "program" },
         { name: "Who's Behind", link: "whosbehind" },
-        { name: "Tickets", link: "tickets" },
+        { name: "Tickets", link: "#" },
         { name: "Backstage", link: "backstage" }
       ]
     };
