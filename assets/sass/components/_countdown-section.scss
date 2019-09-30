@@ -1,0 +1,32 @@
+.countdown-section {
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: $font-light-grey;
+  padding: 5%;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  transition: all 0.3s;
+  justify-content: center;
+  color:$white;
+
+  h2 {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: normal;
+    font-size: 2.6em;
+  }
+
+  h3 {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: normal;
+    font-size: 4em;
+    margin: auto;
+  }
+  .timestamp {
+    font-size: 0.5em;
+  }
+}

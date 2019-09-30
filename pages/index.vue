@@ -9,6 +9,9 @@
     <section>
       <instagram-section />
     </section>
+    <section>
+      <countdown-section />
+    </section>
   </div>
 </template>
 
@@ -16,16 +19,20 @@
 import frontpageGrid from "~/components/frontpageGrid.vue";
 import icebergSection from "~/components/icebergSection.vue";
 import instagramSection from "~/components/instagramSection.vue";
+import countdownSection from "~/components/countdownSection.vue";
 
 export default {
   components: {
     frontpageGrid,
     icebergSection,
-    instagramSection
+    instagramSection,
+    countdownSection
   }
 };
 </script>
 
 <style>
-
+path.svg-icon{
+  fill:#ffffff;
+}
 </style>
