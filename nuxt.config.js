@@ -20,14 +20,38 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: 'Arctic Sounds',
+    title: '9 April – 13 April | Arctic Sounds Festival',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Arctic Sounds Festival' }
+      { hid: 'description', name: 'description', content: 'Arctic Sounds Festival' },
+      /* App Store Smart Banner */
+      { name: 'apple-itunes-app', content: 'app-id=1349445689' },
+      /* Google PLAY Smart Banner */
+      { name: 'smartbanner:title', content: 'Arctic Sounds' },
+      { name: 'smartbanner:author', content: 'Greencopper' },
+      { name: 'smartbanner:price', content: 'FREE' },
+      { name: 'smartbanner:price-suffix-google', content: ' - In Google Play' },
+      { name: 'smartbanner:icon-google', content: '/assets/img/logo-rgb.png' },
+      { name: 'smartbanner:button', content: 'VIEW' },
+      { name: 'smartbanner:button-url-google', content: 'https://play.google.com/store/apps/details?id=fm.golive.arcticsoundfestival6305557d' },
+      { name: 'smartbanner:enabled-platforms', content: 'android' },
+      /* SoMe Open Graph */
+      { property: 'og:type', content: 'website' },
+      { property: 'og:title', content: 'Arctic Sounds 2020 | 9 April - 13 April' },
+      { property: 'og:description', content: 'Arctic Sounds Music festival in Sisimiut, Greenland. Rough. Real. Remote.' },
+      { property: 'og:url', content: 'https://arcticsounds.gl/' },
+      { property: 'og:image', content: '/assets/img/logo-rgb.png' },
+      { property: 'og:image:alt', content: 'Arctic Sounds Logo' },
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      /* Google PLAY Smart Banner */
+      { rel: 'stylesheet', href: '/meta/css/smartbanner.min.css' },
+    ],
+    script: [
+      /* Google Play Smart Banner */
+      { src:'/meta/js/smartbanner.min.js' }
     ]
   },
 
@@ -48,6 +72,7 @@ module.exports = {
   */
   plugins: [
     '@/plugins/directives.js',
+    {src: '@/plugins/vueCountdown.js', mode: 'client'},
     {src: '@/plugins/vueInstagram.js', mode: 'client'}
   ],
 
