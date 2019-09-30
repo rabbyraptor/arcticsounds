@@ -30,7 +30,7 @@
     }
 
     li {
-      margin: 0 16px;
+      margin: 0 10px;
     }
 
     li:first-of-type {
@@ -51,6 +51,11 @@
     a:hover {
       color: tint($font-light-grey, 65%);
       transition: color 0.2s;
+    }
+    .svg-icon{
+      fill: $font-light-grey;
+      height:16px;
+      width:16px;
     }
   }
 
