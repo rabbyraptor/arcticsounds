@@ -25,4 +25,7 @@
 #goevent-web {
   z-index: 0;
 }
+.gc-back-to-top{
+  display:none!important;
+}
 </style>

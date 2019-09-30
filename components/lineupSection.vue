@@ -16,7 +16,7 @@
   </div>
 </template>
 
-<style scoped>
+<style>
 .lineup-section {
   width: 100%;
   background-color: #000;
@@ -24,5 +24,8 @@
 }
 #goevent-web {
   z-index: 0;
+}
+.gc-back-to-top{
+  display:none!important;
 }
 </style>
