@@ -1,18 +1,17 @@
 .main-footer {
-  height: 300px;
   width: 100%;
   background-color: $black;
   color: $white;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  column-gap: 16px;
-  padding: 0 5%;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  padding: 5%;
   border-top: 4px solid $white;
   box-sizing: border-box;
+  text-align: center;
 
   ul {
-    margin-top: 50px;
-    line-height: 1.6em;
+    margin: 1em auto 0 auto;
   }
   h3 {
     text-transform: uppercase;
@@ -20,7 +19,9 @@
     font-size: 1.2em;
   }
   li {
-      font-size:.8em;
+      font-size:.7em;
+      padding:.125em 0;
+      
     .svg-icon {
       fill: $font-light-grey;
       height: 16px;
@@ -41,20 +42,23 @@
     color: $white;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
     padding: 0 10%;
     font-size: 20px;
     border-top: 4px solid $white;
+    text-align:left;
 
     ul {
       margin-top: 50px;
-      line-height: 1.6em;
     }
     h3 {
       text-transform: uppercase;
       color: $font-light-grey;
-      font-size: 24px;
+      font-size: 1.6em;
     }
     li {
+        font-size:1em;
+        padding:.25em 0;
       .svg-icon {
         fill: $font-light-grey;
         height: 20px;
