@@ -28,11 +28,6 @@ section {
   width: 100%;
 }
 
-@include mq($mobileBreakpoint) {
-  padding: 0 1em;
-  max-width: 40em;
-}
-
 @include mq($removeMobileMenuBreakPoint) {
   max-width: 60em;
   .container {
@@ -42,9 +37,3 @@ section {
     width: 100%;
   }
 }
-
-@include mq(976) {
-  padding: 0;
-}
-
-@include chrisCoyier;
