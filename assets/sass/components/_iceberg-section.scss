@@ -1,5 +1,5 @@
 .iceberg-section {
-  height: 50vh;
+  min-height: 50vh;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -14,7 +14,7 @@
     text-transform: uppercase;
     color: $white;
     font-weight: normal;
-    font-size: 1.8em;
+    font-size: 1.2em;
     color: #8afff0;
     word-wrap: wrap;
   }
