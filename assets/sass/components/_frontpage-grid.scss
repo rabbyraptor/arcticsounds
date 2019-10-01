@@ -1,43 +1,75 @@
 .frontpage-grid {
-  display:grid;
-  grid-template-columns: 1fr 1fr;
-  width:100%;
-  height:1350px;
- 
-  .left{
-      display: grid;
-      grid-template-rows: 1fr 1fr 1fr;
-  }
+  display: grid;
+  grid-template-columns: 1fr;
 
-  .right{
-      display: grid;
-      grid-template-rows: 1fr 1fr;
-  }
-
-.grid-image {
+  .grid-image {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    padding:16px;
-    display:grid;
-    align-items:center;
-    justify-items:center;
-    transition: filter .2s;
+    padding: 16px;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    transition: filter 0.2s;
+    min-height:120px;
 
-    h2{
-        text-align:center;
-        text-transform:uppercase;
-        line-height:0.8em;
-        color:$white;
-        font-weight:normal;
-        font-size:4.2em;
-        display:inline;
+    h2 {
+      text-align: center;
+      text-transform: uppercase;
+      line-height: 0.8em;
+      color: $white;
+      font-weight: normal;
+      font-size: 2em;
+      display: inline;
     }
   }
-.grid-image:hover, h2:hover.grid-image {
+  .grid-image:hover,
+  h2:hover.grid-image {
     filter: brightness(110%);
     cursor: pointer;
+  }
 }
 
+@include mq($removeMobileMenuBreakPoint) {
+  .frontpage-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 1350px;
 
+    .left {
+      display: grid;
+      grid-template-rows: 1fr 1fr 1fr;
+    }
+
+    .right {
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+    }
+
+    .grid-image {
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      padding: 16px;
+      display: grid;
+      align-items: center;
+      justify-items: center;
+      transition: filter 0.2s;
+
+      h2 {
+        text-align: center;
+        text-transform: uppercase;
+        line-height: 0.8em;
+        color: $white;
+        font-weight: normal;
+        font-size: 4.2em;
+        display: inline;
+      }
+    }
+    .grid-image:hover,
+    h2:hover.grid-image {
+      filter: brightness(110%);
+      cursor: pointer;
+    }
+  }
 }

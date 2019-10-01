@@ -1,6 +1,5 @@
 .iceberg-section {
-  width: 100%;
-  height: 90vh;
+  height: 50vh;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -9,15 +8,27 @@
   display: flex;
   align-items: center;
   justify-items: center;
-  transition: all 0.3s;
 
   h3 {
     text-align: center;
     text-transform: uppercase;
     color: $white;
     font-weight: normal;
-    font-size: 3em;
-    color:#8afff0;
+    font-size: 1.8em;
+    color: #8afff0;
     word-wrap: wrap;
+  }
+}
+@include mq($removeMobileMenuBreakPoint) {
+  .iceberg-section {
+    height: 90vh;
+    padding: 5%;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+
+    h3 {
+      font-size: 3em;
+    }
   }
 }

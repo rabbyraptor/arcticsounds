@@ -32,7 +32,5 @@ export default {
 </script>
 
 <style>
-path.svg-icon{
-  fill:#ffffff;
-}
+
 </style>

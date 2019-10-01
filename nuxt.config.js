@@ -23,7 +23,7 @@ module.exports = {
     title: '9 April – 13 April | Arctic Sounds Festival',
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=0.86, maximum-scale=3.0, minimum-scale=0.86' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: 'Arctic Sounds Festival' },
       /* App Store Smart Banner */
       { name: 'apple-itunes-app', content: 'app-id=1349445689' },
