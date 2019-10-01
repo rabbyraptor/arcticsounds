@@ -1,6 +1,6 @@
 html {
-  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+    sans-serif;
   font-size: 16px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
@@ -17,41 +17,34 @@ html {
   margin: 0;
 }
 
-section{
-  width:100%;
+section {
+  width: 100%;
 }
 
 .container {
   margin: 0 auto;
   text-align: center;
-  padding-top:100px;
+  padding-top: 100px;
   width: 100%;
 }
 
-.wrapper {
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 5%;
-  box-sizing: border-box;
-
-  @include mq($mobileBreakpoint) {
-    padding: 0 1em;
-    max-width: 40em;
-  }
-
-  @include mq($removeMobileMenuBreakPoint) {
-    max-width: 60em;
-    .container {
-      margin: 0 auto;
-      text-align: center;
-      padding-top: 300px;
-      width: 100%;
-    }
-  }
-
-  @include mq(976) {
-    padding: 0;
-  }
-
-  @include chrisCoyier;
+@include mq($mobileBreakpoint) {
+  padding: 0 1em;
+  max-width: 40em;
 }
+
+@include mq($removeMobileMenuBreakPoint) {
+  max-width: 60em;
+  .container {
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 300px;
+    width: 100%;
+  }
+}
+
+@include mq(976) {
+  padding: 0;
+}
+
+@include chrisCoyier;
