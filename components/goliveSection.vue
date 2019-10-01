@@ -18,7 +18,7 @@
 <script>
 export default{
   props: {
-    datatype:{default:'schedule'},
+    datatype:{},
   }
 }
 </script>

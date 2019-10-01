@@ -1,15 +1,20 @@
 <template>
     <section>
-      <lineup-section />
+      <golive-section :datatype="datatype" />
     </section>
 </template>
 
 <script>
-import lineupSection from '../components/lineupSection'
+import goliveSection from '../components/goliveSection'
 
 export default {
+  data(){
+    return{
+      datatype:'artists'
+    }
+  },
   components: {
-    lineupSection
-  }
+    goliveSection
+  },
 };
 </script>

@@ -1,15 +1,20 @@
 <template>
     <section>
-      <program-section />
+      <golive-section :datatype="datatype" />
     </section>
 </template>
 
 <script>
-import programSection from '../components/programSection'
+import goliveSection from '../components/goliveSection'
 
 export default {
+  data(){
+    return{
+      datatype:'schedule',
+    }
+  },
   components: {
-    programSection
-  }
+    goliveSection
+  },
 };
 </script>
