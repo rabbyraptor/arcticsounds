@@ -29,7 +29,7 @@ section {
 }
 
 @include mq($removeMobileMenuBreakPoint) {
-  max-width: 60em;
+  //max-width: 60em;
   .container {
     margin: 0 auto;
     text-align: center;
