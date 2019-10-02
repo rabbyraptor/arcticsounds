@@ -17,16 +17,29 @@ html {
   margin: 0;
 }
 
-section {
-  width: 100%;
+.site-wrapper{
+  margin:auto;
 }
 
 .container {
+  max-width:1600px;
   margin: 0 auto;
   text-align: center;
   padding-top: 100px;
   width: 100%;
 }
+
+section {
+  width: 100%;
+  padding:5%;
+  
+}
+
+.full-width-section{
+  padding:0;
+}
+
+
 
 @include mq($removeMobileMenuBreakPoint) {
   //max-width: 60em;

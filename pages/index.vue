@@ -1,15 +1,15 @@
 <template>
   <div>
-    <section>
+    <section class="full-width-section">
       <frontpage-grid />
     </section>
-    <section>
+    <section class="full-width-section">
       <iceberg-section />
     </section>
     <section>
       <instagram-section />
     </section>
-    <section>
+    <section class="full-width-section">
       <countdown-section />
     </section>
   </div>

@@ -1,5 +1,5 @@
 <template>
-    <section>
+    <section class="full-width-section">
       <golive-section :datatype="datatype" />
     </section>
 </template>
