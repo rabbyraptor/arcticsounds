@@ -1,35 +1,52 @@
 .nordic-playgrounds-section {
-  width: 100%;
-  padding: 5% 10%;
-
+  
   h1 {
-    font-size: 3em;
-    color: $white;
-    margin-bottom: 1em;
+    //font-size: 3em;
+    color: $font-light-grey;
+    margin-bottom: .5em;
     text-transform: uppercase;
+    line-height: .9em;
   }
 
   h2 {
-    font-size: 2em;
+    //font-size: 2em;
     color: $white;
-    margin-bottom: 1em;
+    margin-bottom: .3em;
     text-transform: uppercase;
+    line-height:.9em;
+    text-align: left;
   }
 
-  p, ul{
-    font-size: 22px;
+  p,
+  ul {
+    font-size:.9em;
     text-align: left;
-    color:$white;
+    color: $white;
     line-height: 1.3em;
   }
-  ul{
-    padding:.5em;
-    padding-left:22px;
+  ul {
+    padding: 0.5em;
+    padding-left: 22px;
   }
-  li{
+  li {
     list-style-type: initial;
   }
-  a{
-    color:$brand-color;
+  a {
+    color: $brand-color;
+  }
+}
+@include mq($removeMobileMenuBreakPoint) {
+  .nordic-playgrounds-section {
+    max-width:1000px;
+    margin: auto;
+
+    h1 {
+      margin-bottom: 1em;
+    }
+
+    p,
+    ul {
+      font-size: 1.3em;
+    }
   }
 }

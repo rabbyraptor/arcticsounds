@@ -1,23 +1,65 @@
 .faq-section {
-  width: 100%;
-  padding: 5% 0;
-
   h1 {
-    font-size: 3em;
-    color: $white;
+    color: $font-light-grey;
     margin-bottom: 1em;
     text-transform: uppercase;
   }
 
   h2 {
-    font-size: 2em;
     color: $white;
-    margin-bottom:1em;
+    margin-bottom: 1em;
   }
 
   .faq {
-    padding: 0 !important;
+    color: $white;
+    text-align: left;
+    line-height: 1.15em;
 
+    .question {
+      font-size: 1.3em;
+      margin: 1.6em 0 0.2em 0;
+      color:$font-light-grey;
+    }
+    .answer {
+      font-size: 0.9em;
+
+      li {
+        margin-bottom: 0.6em;
+      }
+    }
+  }
+}
+@include mq($removeMobileMenuBreakPoint) {
+  .faq-section {
+    max-width:1000px;
+    margin:auto;
+    h1 {
+      margin-bottom: 1em;
+    }
+
+    h2 {
+      margin-bottom: 1em;
+    }
+
+    .faq {
+      text-align: left;
+      line-height: 1.6em;
+
+      .question {
+        font-size: 1.6em;
+        margin: 1.6em 0 0.2em 0;
+      }
+      .answer {
+        font-size: 1.2em;
+
+        li {
+          margin-bottom: 0.6em;
+        }
+      }
+    }
+  }
+}
+/*
     .faq-wrapper {
       width: 100%;
 
@@ -50,5 +92,4 @@
       li {
           padding-top:1em;
       }
-  }
-}
+  }*/

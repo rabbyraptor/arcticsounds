@@ -1,9 +1,9 @@
 <template>
     <div class="iceberg-section">
-        <h3>
+        <p>
             IN THIS PLACE, ART AND NATURE BECOMES ONE AND THE SAME.
             TRADITION AND INNOVATION MEET TO CREATE THE ULTIMATE EXPERIENCE. <br/>
             REAL. ROUGH. REMOTE.
-        </h3>
+        </p>
     </div>
 </template>

@@ -1,6 +1,6 @@
 <template>
   <div class="nordic-playgrounds-section">
-    <h1>Who's Behind</h1>
+    <h1>Who's Behind?</h1>
     <h2>Nordic Playgrounds</h2>
     <p>Nordic Playgrounds is a collection of activities that strive to balance a playful approach to serious collaboration with targeted social events and network meetings.</p>
     <br />

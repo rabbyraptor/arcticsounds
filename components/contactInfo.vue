@@ -3,7 +3,7 @@
     <slot></slot>
     <li v-for="info in contactInfo" :key="info.name">
       <a :href="info.link">
-        <a class="icon" :href="info.link" target="_blank" v-html="info.icon"></a>
+        <span class="icon" :href="info.link" target="_blank" v-html="info.icon"></span>
         <span>{{ info.info }}</span>
       </a>
     </li>

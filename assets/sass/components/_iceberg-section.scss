@@ -9,7 +9,7 @@
   align-items: center;
   justify-items: center;
 
-  h3 {
+  p {
     text-align: center;
     text-transform: uppercase;
     color: $white;
@@ -21,14 +21,11 @@
 }
 @include mq($removeMobileMenuBreakPoint) {
   .iceberg-section {
-    height: 90vh;
     padding: 5%;
-    display: flex;
-    align-items: center;
-    justify-items: center;
+    min-height:90vh;
 
-    h3 {
-      font-size: 3em;
+    p {
+      font-size: 3.2em;
     }
   }
 }
