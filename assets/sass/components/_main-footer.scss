@@ -1,22 +1,19 @@
 .main-footer {
-  width: 100%;
-  background-color: $black;
-  color: $white;
+  padding: 3em 5%;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr;
-  padding: 5%;
   border-top: 4px solid $white;
   box-sizing: border-box;
   text-align: center;
 
   ul {
-    margin: 1em auto 0 auto;
+    justify-self:center;
   }
   h3 {
-    text-transform: uppercase;
     color: $font-light-grey;
     font-size: 1.4em;
+    line-height:1em;
   }
   li {
       font-size:1em;
@@ -26,7 +23,6 @@
       fill: $font-light-grey;
       height: 20px;
       width: 20px;
-      //margin-right: 0px;
       padding-top: 4px;
     }
   }
@@ -36,29 +32,19 @@
 }
 @include mq($removeMobileMenuBreakPoint) {
   .main-footer {
-    height: 300px;
-    width: 100%;
-    background-color: $black;
-    color: $white;
+    min-height: 300px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
-    padding: 0 10%;
-    font-size: 20px;
     border-top: 4px solid $white;
     text-align:left;
 
-    ul {
-      margin-top: 50px;
-    }
     h3 {
-      text-transform: uppercase;
       color: $font-light-grey;
-      font-size: 1.4em;
     }
     li {
-        font-size:1em;
-        padding:.25em 0;
+        font-size:1.3em;
+        padding:.2em 0;
       .svg-icon {
         fill: $font-light-grey;
         height: 20px;

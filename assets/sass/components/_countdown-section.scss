@@ -1,5 +1,4 @@
 .countdown-section {
-  width: 100%;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -7,25 +6,15 @@
   padding: 5%;
   display: flex;
   align-items: center;
-  justify-items: center;
-  transition: all 0.3s;
   justify-content: center;
-  color: $white;
 
   h2 {
-    text-align: center;
-    text-transform: uppercase;
-    font-weight: normal;
     font-size: 1.4em;
     line-height:.9em;
   }
 
   h3 {
-    text-align: center;
-    text-transform: uppercase;
-    font-weight: normal;
     font-size: 2em;
-    margin: auto;
   }
   .timestamp {
     font-size: 0.5em;
@@ -39,7 +28,6 @@
     }
     h3 {
       font-size: 4em;
-      margin: auto;
     }
   }
 }
