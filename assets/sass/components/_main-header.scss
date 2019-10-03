@@ -4,29 +4,58 @@
   background-color: $black;
   font-size: 30px;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+  align-content: center;
   position: fixed;
   z-index: 1;
   padding: 0 5%;
 
-  .logo {
-    height: 100%;
-    padding:5% 0;
+  a .logo {
+    height: 86px;
+    width: 86px;
+    min-width: 86px;
+    margin: 7px 0 0 0;
+    //padding: 5% 0;
   }
+  .nav-menu-wrapper {
+    display: none;
+  }
+  /* ---- Mobile burger menu open ---- */
+  .mobile {
+    display: none;
+    grid-template-columns: 1fr auto;
+    grid-column: 1 / span 2;
+    column-gap: 1em;
+    justify-self: flex-end;
+    background-color:$black;
+    margin-top:-1px;
+    font-size:.8em;
+    padding:0.8em 0.8em 1em 0.8em;
+    transition: opacity 0.2s linear;
+    
+    ul {
+      flex-flow: column;
+      //margin:.5em;
 
+      li{
+        margin:0;
+      }
+    }
+  }
   nav {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    flex-flow: row;
+    margin: 0 auto 0 auto;
     width: 100%;
-    display: flex;
-    flex-flow: column;
-    margin: 175px 0 0 0;
 
     ul {
-      display: none;
+      display: flex;
       justify-content: flex-end;
     }
 
     li {
-      margin: 0 10px;
+      margin: 0 8px;
     }
 
     li:first-of-type {
@@ -42,6 +71,8 @@
       text-transform: uppercase;
       padding: 0 0.2em;
       transition: color 0.2s;
+      white-space: nowrap;
+      overflow: none;
     }
 
     a:hover {
@@ -71,10 +102,6 @@
       font-size: 16px;
       color: $font-light-grey;
     }
-
-    a.icon {
-      font-family: "ElegantIcons";
-    }
   }
 }
 
@@ -91,16 +118,11 @@
 .headroom--pinned {
 }
 .headroom--unpinned {
-  
-  
   .logo {
-
   }
   nav {
-    
   }
   .navigation-menu-sub {
-    
   }
 }
 
@@ -116,53 +138,68 @@
     z-index: 1;
     padding: 0 5%;
 
-    .logo {
+    a .logo {
       height: 336px;
-      position: absolute;
-      left: -1.5%;
-      margin-top: 117px;
+      width: 336px;
+      margin-left: -100%;
+      margin-top: -44px;
       opacity: 0.8;
-      padding:0;
+      padding: 0;
+    }
+    img {
+      max-width: initial;
+    }
+
+    .mobile {
+      display: none!important;
     }
 
     nav {
-      width: 100%;
-      display: flex;
-      flex-flow: column;
-      margin: 175px 0 0 0;
+      flex-flow: row;
+      grid-template-columns: 10% 90%;
+      max-width: 1600px;
+      justify-self: center;
+      margin: 175px auto 0 auto;
+
+      .nav-menu-wrapper {
+        display: grid;
+        width: 100%;
+        flex-flow: column;
+        justify-content: flex-end;
+        align-self: flex-start;
+      }
 
       ul {
         display: flex;
-        justify-content: flex-end;
-      }
 
-      li {
-        margin: 0 10px;
-      }
+        li {
+          margin: 0 6px;
+        }
 
-      li:first-of-type {
-        margin-left: 0;
-      }
+        li:first-of-type {
+          margin-left: 0;
+        }
 
-      li:last-of-type {
-        margin-right: -0.2em;
-      }
+        li:last-of-type {
+          margin-right: -0.2em;
+        }
 
-      a {
-        color: $font-light-grey;
-        text-transform: uppercase;
-        padding: 0 0.2em;
-        transition: color 0.2s;
-      }
+        a {
+          color: $font-light-grey;
+          text-transform: uppercase;
+          padding: 0 0.2em;
+          transition: color 0.2s;
+        }
 
-      a:hover {
-        color: tint($font-light-grey, 65%);
-        transition: color 0.2s;
-      }
-      .svg-icon {
-        fill: $font-light-grey;
-        height: 16px;
-        width: 16px;
+        a:hover {
+          color: tint($font-light-grey, 65%);
+          transition: color 0.2s;
+        }
+        .svg-icon {
+          fill: $font-light-grey;
+          height: 16px;
+          width: 16px;
+        }
       }
     }
 
@@ -182,10 +219,6 @@
         font-size: 16px;
         color: $font-light-grey;
       }
-
-      a.icon {
-        font-family: "ElegantIcons";
-      }
     }
   }
 
@@ -195,22 +228,28 @@
     .navigation-menu-sub {
       transition: margin 0.2s linear;
     }
-    .logo {
-      transition: all 0.2s linear;
+    a .logo {
+      transition: height 0.2s linear, width 0.2s linear, margin 0.2s linear, opacity 0.2s linear;
     }
   }
   .headroom--pinned {
   }
   .headroom--unpinned {
-    position: fixed;
     height: 104px;
-    .logo {
-      height: 82px;
-      margin-top: 10px;
-      left: 5%;
+    a .logo {
+      margin: -9px 0 0 0;
+      height: 86px;
+      width: 86px;
+      opacity: 1;
+    }
+    img {
+      max-width: initial;
     }
     nav {
-      margin-top: 18px;
+      margin: 18px auto 0 auto;
+    }
+    .nav-menu-wrapper {
+      align-self: center;
     }
     .navigation-menu-sub {
       margin-top: -6px;

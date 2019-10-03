@@ -22,7 +22,6 @@ html {
 }
 
 .container {
-  max-width:1600px;
   margin: 0 auto;
   text-align: center;
   padding-top: 100px;
@@ -31,8 +30,7 @@ html {
 
 section {
   width: 100%;
-  padding:5%;
-  
+  padding:10% 5%;
 }
 
 .full-width-section{
@@ -44,9 +42,14 @@ section {
 @include mq($removeMobileMenuBreakPoint) {
   //max-width: 60em;
   .container {
+    max-width:1600px;
     margin: 0 auto;
     text-align: center;
     padding-top: 300px;
     width: 100%;
+  }
+  section {
+    width: 100%;
+    padding:5%;
   }
 }

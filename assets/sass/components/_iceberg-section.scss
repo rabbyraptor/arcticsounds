@@ -12,8 +12,6 @@
   p {
     text-align: center;
     text-transform: uppercase;
-    color: $white;
-    font-weight: normal;
     font-size: 1.2em;
     color: #8afff0;
     word-wrap: wrap;
@@ -21,7 +19,6 @@
 }
 @include mq($removeMobileMenuBreakPoint) {
   .iceberg-section {
-    padding: 5%;
     min-height:90vh;
 
     p {

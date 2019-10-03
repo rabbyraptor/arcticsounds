@@ -1,9 +1,16 @@
 <template>
   <header class="main-header">
-    <logo />
     <nav>
-      <navigation-menu />
-      <navigation-menu-sub />
+      <logo />
+      <mobile-burger-menu class="mobile-burger-menu" />
+      <div class="nav-menu-wrapper">
+        <navigation-menu />
+        <navigation-menu-sub />
+      </div>
+      <div class="mobile">
+        <navigation-menu />
+        <navigation-menu-sub />
+      </div>
     </nav>
   </header>
 </template>
@@ -12,13 +19,14 @@
 import logo from "~/components/logo.vue";
 import navigationMenu from "~/components/navigationMenu.vue";
 import navigationMenuSub from "~/components/navigationMenuSub.vue";
+import mobileBurgerMenu from "~/components/mobileBurgerMenu.vue";
 import Headroom from "headroom.js";
 
 export default {
   mounted() {
     var header = document.querySelector("header");
     var options = {
-      offset: 150,
+      offset: 180,
       tolerance: {
         up: 300,
         down: 10
@@ -31,6 +39,7 @@ export default {
     logo,
     navigationMenu,
     navigationMenuSub,
+    mobileBurgerMenu,
     Headroom
   }
 };
