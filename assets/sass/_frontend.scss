@@ -27,6 +27,7 @@
 
 //Extends
 @import "extends/wrapper";
+@import "extends/heading-styles";
 
 //Components
 @import "components/main-header";
@@ -38,5 +39,6 @@
 @import "components/nordic-playgrounds-section";
 @import "components/sponsors-grid";
 @import "components/countdown-section";
+@import "components/mobile-burger-menu";
 
 //Templates
