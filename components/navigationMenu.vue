@@ -14,6 +14,7 @@ export default {
       pages: [
         { name: "Line-up", link: "lineup" },
         { name: "Program", link: "program" },
+        { name: "Who's Behind", link: "whosbehind" },
         { name: "Tickets", link: "#" },
         { name: "Backstage", link: "backstage" }
       ]
