@@ -72,6 +72,7 @@ module.exports = {
   */
   plugins: [
     '@/plugins/directives.js',
+    '@/plugins/contentful.js',
     {src: '@/plugins/vueCountdown.js', mode: 'client'},
     {src: '@/plugins/vueInstagram.js', mode: 'client'}
   ],

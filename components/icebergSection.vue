@@ -1,9 +1,15 @@
 <template>
-    <div class="iceberg-section">
-        <p>
-            IN THIS PLACE, ART AND NATURE BECOMES ONE AND THE SAME.
-            TRADITION AND INNOVATION MEET TO CREATE THE ULTIMATE EXPERIENCE. <br/>
-            REAL. ROUGH. REMOTE.
-        </p>
+  <div>
+    <div class="iceberg-section" :style="{ backgroundImage: 'url(' + content.image.fields.file.url + ')' }">
+      <p v-html="content.text" />
     </div>
+  </div>
 </template>
+
+<script>
+export default {
+  props: {
+    content: {}
+  }
+};
+</script>

@@ -1,10 +1,10 @@
 <template>
   <div>
     <section class="full-width-section">
-      <frontpage-grid />
+      <frontpage-grid :content="frontpageGrid" />
     </section>
     <section class="full-width-section">
-      <iceberg-section />
+      <iceberg-section :content="icebergSection" />
     </section>
     <section>
       <instagram-section />
@@ -21,7 +21,23 @@ import icebergSection from "~/components/icebergSection.vue";
 import instagramSection from "~/components/instagramSection.vue";
 import countdownSection from "~/components/countdownSection.vue";
 
+import { createClient } from "~/plugins/contentful.js";
+const client = createClient();
+
 export default {
+  asyncData({ env }) {
+    return Promise.all([
+      client.getEntries({ content_type: "icebergSection" }),
+      client.getEntries({ content_type: "frontpageGrid" })
+    ])
+      .then(([iceberg, fpgrid]) => {
+        return {
+          icebergSection: iceberg.items[0].fields,
+          frontpageGrid: fpgrid.items
+        };
+      })
+      .catch(console.error);
+  },
   components: {
     frontpageGrid,
     icebergSection,
@@ -32,5 +48,4 @@ export default {
 </script>
 
 <style>
-
 </style>
