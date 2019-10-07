@@ -3,11 +3,11 @@
     <goevent-web
       id="goevent-web"
       project-tag="arcticsoundfestival-2019"
-      project-hash="bb85e8e858594a138ef3f31c06581fc0"
+      :project-hash="goeventHash"
       data-language="eng"
       :data-default-url="datatype"
     ></goevent-web>
-    <script
+    <script 
       id="gw-script"
       type="text/javascript"
       src="https://s3.amazonaws.com/goeventweb-static.greencopper.com/7.7.0/public/scripts/endpoint.min.gz.js"
@@ -16,11 +16,16 @@
   </div>
 </template>
 <script>
-export default{
+export default {
+  data() {
+    return {
+      goeventHash: process.env.GREENCOPPER_GOEVENT_HASH
+    };
+  },
   props: {
-    datatype:{},
+    datatype: {}
   }
-}
+};
 </script>
 
 <style scoped>
@@ -32,7 +37,7 @@ export default{
 #goevent-web {
   z-index: 0;
 }
-.gc-back-to-top{
-  display:none!important;
+.gc-back-to-top {
+  display: none !important;
 }
 </style>
