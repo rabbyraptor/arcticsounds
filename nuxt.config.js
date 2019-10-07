@@ -84,7 +84,9 @@ module.exports = {
 
   env: {
     CTF_SPACE_ID: process.env.CTF_SPACE_ID || '',
-    CTF_CDA_ACCESS_TOKEN: process.env.CTF_CDA_ACCESS_TOKEN || ''
+    CTF_CDA_ACCESS_TOKEN: process.env.CTF_CDA_ACCESS_TOKEN || '',
+    IG_ACCESS_TOKEN: process.env.IG_ACCESS_TOKEN || '',
+    GREENCOPPER_GOEVENT_HASH: process.env.GREENCOPPER_GOEVENT_HASH || ''
   },
 
   /*
