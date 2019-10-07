@@ -51,7 +51,7 @@ module.exports = {
     ],
     script: [
       /* Google Play Smart Banner */
-      { src:'/meta/js/smartbanner.min.js' }
+      { src:'/meta/js/smartbanner.min.js', defer:true }
     ]
   },
 
