@@ -1,25 +1,43 @@
 <template>
-  <div class="lineup-section">
-    <goevent-web
-      id="goevent-web"
-      project-tag="arcticsoundfestival-2019"
-      :project-hash="goeventHash"
-      data-language="eng"
-      :data-default-url="datatype"
-    ></goevent-web>
-    <script
-      id="gw-script"
-      type="text/javascript"
-      src="https://s3.amazonaws.com/goeventweb-static.greencopper.com/7.7.0/public/scripts/endpoint.min.gz.js"
-      data-gzip="true"
-    ></script>
+  <div class="golive-section">
+    <h1>Arctic Sounds Line-up 2019</h1>
+    <div class="artists-grid">
+      <div v-for="artist in artists" :key="artist._id" class="artist">
+        <div
+          class="artist-image"
+          :style="{ backgroundImage: 'url(//goevent-images.s3.amazonaws.com/arcticsoundfestival-2019/b041a9ed/web/artist_' + artist._id + '_' + artist.photo_suffix + '.jpg)' }"
+        >
+          <span class="artist-title">
+            <h3>{{ artist.title }}</h3>
+          </span>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
+
 <script>
+//v-if="artist.photo_suffix"
+const axios = require("axios").default;
+
 export default {
+  mounted() {
+    axios
+      .get(
+        "https://s3.amazonaws.com/goeventweb-static.greencopper.com/" +
+          this.goeventHash +
+          "/arcticsoundfestival-2019/data/eng/artists.json"
+      )
+      .then(response => (this.artists = response.data))
+      .catch(function(error) {
+        console.log(error);
+      })
+      .finally(function() {});
+  },
   data() {
     return {
-      goeventHash: process.env.GREENCOPPER_GOEVENT_HASH
+      goeventHash: process.env.GREENCOPPER_GOEVENT_HASH,
+      artists: {}
     };
   },
   props: {
@@ -27,17 +45,3 @@ export default {
   }
 };
 </script>
-
-<style scoped>
-.lineup-section {
-  width: 100%;
-  background-color: #000;
-  padding-top: 10%;
-}
-#goevent-web {
-  z-index: 0;
-}
-.gc-back-to-top {
-  display: none !important;
-}
-</style>
