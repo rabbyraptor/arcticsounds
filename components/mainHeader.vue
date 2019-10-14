@@ -23,17 +23,40 @@ import mobileBurgerMenu from "~/components/mobileBurgerMenu.vue";
 import Headroom from "headroom.js";
 
 export default {
+  data(){
+    return{
+      headroom:{}
+    }
+  },
   mounted() {
-    var header = document.querySelector("header");
-    var options = {
+    const header = document.querySelector("header");
+    const options = {
       offset: 180,
       tolerance: {
         up: 300,
         down: 10
       }
     };
-    var headroom = new Headroom(header, options);
-    headroom.init();
+    this.headroom = new Headroom(header, options);
+    this.headroom.init();
+    this.checkRoute();
+  },
+  watch: {
+    $route() {
+      console.info(this.$route.name);
+      this.checkRoute();
+    }
+  },
+  methods:{
+    checkRoute(){
+      if (this.$route.name == "lineup-artist") {
+        this.headroom.unpin();
+        this.headroom.freeze();
+      }else{
+        this.headroom.pin();
+        this.headroom.unfreeze();
+      }
+    }
   },
   components: {
     logo,

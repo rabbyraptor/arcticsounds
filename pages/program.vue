@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import goliveSection from '../components/goliveSection'
+//import goliveSection from '../components/goliveSection'
 
 export default {
   data(){
@@ -29,7 +29,7 @@ export default {
     }
   },
   components: {
-    goliveSection
+    //goliveSection
   },
 };
 </script>

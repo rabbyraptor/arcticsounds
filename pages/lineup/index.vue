@@ -1,11 +1,11 @@
 <template>
     <section>
-      <golive-section :datatype="datatype" />
+      <lineup-section/>
     </section>
 </template>
 
 <script>
-import goliveSection from '../components/goliveSection'
+import lineupSection from '../../components/lineupSection'
 
 export default {
   data(){
@@ -14,7 +14,7 @@ export default {
     }
   },
   components: {
-    goliveSection
+    lineupSection
   },
 };
 </script>

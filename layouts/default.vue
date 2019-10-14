@@ -5,16 +5,19 @@
       <nuxt />
     </main>
     <main-footer />
-    <back-to-top/>
+    <back-to-top />
   </div>
 </template>
 
 <script>
 import mainHeader from "~/components/mainHeader.vue";
 import mainFooter from "~/components/mainFooter.vue";
-import BackToTop from '~/components/BackToTop.vue';
+import BackToTop from "~/components/BackToTop.vue";
 
 export default {
+  mounted() {
+    this.$store.dispatch("artists/getData");
+  },
   components: {
     mainHeader,
     mainFooter,
@@ -24,6 +27,4 @@ export default {
 </script>
 
 <style>
-
-
 </style>

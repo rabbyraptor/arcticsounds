@@ -12,11 +12,11 @@ export default {
   data() {
     return {
       pages: [
-        { name: "Line-up", link: "lineup" },
-        { name: "Program", link: "program" },
-        { name: "Who's Behind", link: "whosbehind" },
+        { name: "Line-up", link: "/lineup" },
+        { name: "Program", link: "/program" },
+        { name: "Who's Behind", link: "/whosbehind" },
         { name: "Tickets", link: "#" },
-        { name: "Backstage", link: "backstage" }
+        { name: "Backstage", link: "/backstage" }
       ]
     };
   }
