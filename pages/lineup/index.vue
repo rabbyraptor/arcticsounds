@@ -8,11 +8,6 @@
 import lineupSection from '../../components/lineupSection'
 
 export default {
-  data(){
-    return{
-      datatype:'artists'
-    }
-  },
   components: {
     lineupSection
   },

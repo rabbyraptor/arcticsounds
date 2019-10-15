@@ -22,12 +22,6 @@
 //import goliveSection from '../components/goliveSection'
 
 export default {
-  data(){
-    return{
-      datatype:'artists',
-      goeventHash: process.env.GREENCOPPER_GOEVENT_HASH
-    }
-  },
   components: {
     //goliveSection
   },
