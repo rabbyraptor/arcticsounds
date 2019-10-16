@@ -1,4 +1,5 @@
 const axios = require("axios").default;
+const goeventHash = process.env.GREENCOPPER_GOEVENT_HASH;
 
 export const state = () => ({
     artists: null
@@ -8,7 +9,7 @@ export const actions = {
     async getData ({commit}) {
         return await axios
             .get(
-                "https://s3.amazonaws.com/goeventweb-static.greencopper.com/bb85e8e858594a138ef3f31c06581fc0/arcticsoundfestival-2019/data/eng/artists.json"
+                "https://s3.amazonaws.com/goeventweb-static.greencopper.com/" + goeventHash + "/arcticsoundfestival-2019/data/eng/artists.json"
             )
             .then((res) => commit("setArtists", res))
             .catch(function (error) {
