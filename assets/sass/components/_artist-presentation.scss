@@ -1,68 +1,106 @@
+.artist-presentation {
+  padding-top: 1em;
+  .artist-content {
+    width: 100%;
+  }
+  .artist-image {
+    width: 100%;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    height: 300px;
+    max-width: 100%;
+    img {
+      max-width: 100%;
+      height: auto;
+      max-height: 300px;
+    }
+    .artist-photo-credit {
+      color: rgba(255, 255, 255, 0.8);
+      background-color: rgba(0, 0, 0, 0.4);
+      line-height: 1;
+      padding: 0.2em 0.3em;
+      font-size: 0.8em;
+      position: absolute;
+    }
+  }
+  .artist-title {
+    margin-top: 0.5em;
+    font-size: 1.6em;
+  }
+
+  .artist-style {
+    font-size: 1.3em;
+  }
+
+  .artist-description {
+    font-size: 0.9em;
+
+    strong,
+    b {
+      margin: 1em 0 0 0;
+      display: inline-block;
+    }
+    p {
+      margin: 0.5em 0;
+    }
+  }
+
+  .artist-links {
+    text-align: left;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-flow: dense;
+    column-gap: 1em;
+    row-gap: 1em;
+    margin: 2em 0 2em 0;
+
+    .artist-link {
+      display: flex;
+      padding: 1em;
+      flex-flow: row;
+      align-items: center;
+      border: 1px solid $white;
+    }
+
+    .svg-icon {
+      height: 20px;
+      width: 20px;
+      margin-right: 1em;
+    }
+  }
+  .embedded-link {
+    margin: 0 0 2em 0;
+  }
+}
+
 @include mq($removeMobileMenuBreakPoint) {
   .artist-presentation {
-    padding-top: 1em;
-    margin-top:calc(104px - 300px);
+    margin-top: -196px;
     .artist-content {
-      width: 100%;
       display: grid;
       grid-template-columns: 60% 35%;
       justify-content: space-between;
     }
-    .artist-image{
-      width:100%;
-      background-repeat: no-repeat;
-      overflow:hidden;
-      height:500px;
-      max-width:100%;
-      img{
-        max-width:100%;
-        height:auto;
-        max-height:500px;
-      }
-      .artist-photo-credit{
-        color:rgba(255, 255, 255, .8);
-        background-color:rgba(0,0,0,.4);
-        line-height:1;
-        padding:.2em .3em;
-        font-size:.8em;
-        position: absolute;
-        
+    .artist-image {
+      height: 500px;
+      img {
+        max-height: 500px;
       }
     }
-    .artist-title{
-      margin-top:.5em;
+    .artist-title {
+      margin-top: 0.5em;
+      font-size: 2em;
+    }
+    .artist-style {
+      font-size: 1.5em;
     }
 
-    .artist-description strong{
-      margin: 1em 0 0 0;
-      display: inline-block;
+    .artist-description {
+      font-size: 1.3em;
     }
-    .artist-links{
-      text-align: left;
-      display:grid;
-      grid-template-columns: repeat(2, 1fr);
-      grid-auto-flow: dense;
-      column-gap: 1em;
-      row-gap: 1em;
-      margin: 0 0 2em 0;
 
-      .artist-link{
-        display: flex;
-        padding:1em;
-        flex-flow:row;        
-        align-items:center;
-        border:1px solid $white;
-      }
-
-      .svg-icon{
-        height:20px;
-        width:20px;
-        margin-right:1em;
-      }
-    }
-    .embedded-link {
+    .artist-links {
       margin: 0 0 2em 0;
     }
   }
 }
-

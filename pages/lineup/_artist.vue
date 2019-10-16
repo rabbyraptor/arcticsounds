@@ -14,7 +14,7 @@
           <img :src="artistImage" />
         </div>
         <h2 class="artist-title">{{this.artistInfo.title}} ({{ this.artistInfo.country }})</h2>
-        <h3>{{this.artistInfo.style}}</h3>
+        <h3 class="artist-style">{{this.artistInfo.style}}</h3>
         <div class="artist-description" v-html="this.artistInfo.description" />
       </div>
       <div class="right-side">
@@ -99,7 +99,6 @@
 
 <script>
 const axios = require("axios").default;
-import _ from "underscore";
 
 export default {
   data() {
@@ -181,7 +180,7 @@ export default {
     youtubeLink() {
       for (let i in this.artistLinks) {
         if (
-          this.artistLinks[i].url.match(/v=/)
+          this.artistLinks[i].title == "Youtube" && this.artistLinks[i].url.match(/v=/)
         ) {
           let youtubeLink = {
             title: this.artistLinks[i].title,
@@ -247,7 +246,7 @@ export default {
       let someLinks = [];
       let artLinks = ["Spotify", "Top Tracks", "Soundcloud", "Apple Music"];
       for (let i in this.artistLinks) {
-        if (artLinks.includes(this.artistLinks[i].title) == false) {
+        if (artLinks.includes(this.artistLinks[i].title) == false && !this.artistLinks[i].url.match(/v=/)) {
           someLinks.push({
             title: this.artistLinks[i].title,
             url: this.artistLinks[i].url
