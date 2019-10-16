@@ -2,10 +2,6 @@
   <section class="artist-presentation">
     <div class="artist-content" v-if="this.artistInfo">
       <div class="left-side">
-        <!-- <img
-          :src="'//goevent-images.s3.amazonaws.com/arcticsoundfestival-2019/b041a9ed/web/xl_artist_' + this.artist._id + '_' + this.artist.photo_suffix + '.jpg'"
-          class="artist-image"
-        />-->
         <div class="artist-image">
           <span
             class="artist-photo-credit"
@@ -13,8 +9,8 @@
           >Photo: {{ this.artistInfo.photoCredit }}</span>
           <img :src="artistImage" />
         </div>
-        <h2 class="artist-title">{{this.artistInfo.title}} ({{ this.artistInfo.country }})</h2>
-        <h3 class="artist-style">{{this.artistInfo.style}}</h3>
+        <h2 class="artist-title">{{this.artistInfo.title}} <span v-if="this.artistInfo.country">({{ this.artistInfo.country }})</span></h2>
+        <h3 v-if="this.artistInfo.style" class="artist-style">{{this.artistInfo.style}}</h3>
         <div class="artist-description" v-html="this.artistInfo.description" />
       </div>
       <div class="right-side">
@@ -48,49 +44,11 @@
           </a>
         </div>
 
-        <div class="spotify-embed embedded-link" v-if="spotifyLink">
-          <iframe
-            width="100%"
-            height="300px"
-            frameborder="0"
-            :src="'//embed.spotify.com/?uri=' + spotifyLink.url"
-            allowtransparency="true"
-            allow="encrypted-media;"
-          ></iframe>
-        </div>
-
-        <div class="soundcloud-embed embedded-link" v-if="soundcloudLink">
-          <iframe
-            width="100%"
-            height="auto"
-            frameborder="0"
-            :src="'//w.soundcloud.com/player/?url=' + soundcloudLink.url + '&auto_play=false&show_artwork=false'"
-            allowtransparency="true"
-            allow="encrypted-media;"
-          ></iframe>
-        </div>
-
-        <div class="applemusic-embed embedded-link" v-if="applemusicLink">
-          <iframe
-            width="100%"
-            height="300px"
-            frameborder="0"
-            :src="'//embed.music.apple.com/embed/' + applemusicLink.url"
-            allowtransparency="true"
-            allow="encrypted-media;"
-          ></iframe>
-        </div>
-
-        <div class="youtube-embed embedded-link" v-if="youtubeLink">
-          <iframe
-            width="100%"
-            height="300px"
-            frameborder="0"
-            :src="'//www.youtube-nocookie.com/embed/' + youtubeLink.url"
-            allowtransparency="true"
-            allow="encrypted-media;"
-          ></iframe>
-        </div>
+        <embedded-player v-if="spotifyLink" type="Spotify" :link="spotifyLink"/>
+        <embedded-player v-if="soundcloudLink" type="Soundcloud" :link="soundcloudLink"/>
+        <embedded-player v-if="applemusicLink" type="Apple Music" :link="applemusicLink"/>
+        <embedded-player v-if="youtubeLink" type="Youtube" :link="youtubeLink"/>
+        
       </div>
     </div>
     <div style="color: white;" v-else>Loading Artist...</div>
@@ -99,6 +57,7 @@
 
 <script>
 const axios = require("axios").default;
+import embeddedPlayer from '../../components/embeddedPlayer'
 
 export default {
   data() {
@@ -255,6 +214,9 @@ export default {
       }
       return someLinks;
     }
+  },
+  components:{
+    embeddedPlayer,
   }
 };
 </script>
