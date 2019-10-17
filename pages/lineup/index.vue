@@ -1,5 +1,5 @@
 <template>
-    <section>
+    <section class="full-width-section">
       <lineup-section/>
     </section>
 </template>
