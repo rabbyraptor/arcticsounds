@@ -6,7 +6,7 @@ let modules = [
 ];
 
 if (APP_ENV !== 'production') {
-  modules.push(['nuxt-robots-module', {
+  modules.push(['@nuxtjs/robots', {
     /* module options */
     UserAgent: '*',
     Disallow: '/',
