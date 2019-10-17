@@ -51,7 +51,7 @@ module.exports = {
     ],
     script: [
       /* Google Play Smart Banner */
-      { src:'/meta/js/smartbanner.min.js', defer:true }
+      { src: '/meta/js/smartbanner.min.js', defer: true }
     ]
   },
 
@@ -73,8 +73,8 @@ module.exports = {
   plugins: [
     '@/plugins/directives.js',
     '@/plugins/contentful.js',
-    {src: '@/plugins/vueCountdown.js', mode: 'client'},
-    {src: '@/plugins/vueInstagram.js', mode: 'client'}
+    { src: '@/plugins/vueCountdown.js', mode: 'client' },
+    { src: '@/plugins/vueInstagram.js', mode: 'client' }
   ],
 
   /*
@@ -94,16 +94,23 @@ module.exports = {
   */
   build: {
 
-  },  
+  },
 
   /*
   ** Generate configuration
   */
   generate: {
-    routes:[
-      '/lineup/xenoblight',
-      '/lineup/ingeborg-oktober'
-    ]
+    routes: function () {
+      return axios.get("https://s3.amazonaws.com/goeventweb-static.greencopper.com/bb85e8e858594a138ef3f31c06581fc0/arcticsoundfestival-2019/data/eng/artists.json")
+        .then((res) => {
+          return res.data.map((artist) => {
+            return {
+              route: '/lineup/' + artist.slug,
+              payload: artist
+            }
+          })
+        })
+    }
   }
 
 
