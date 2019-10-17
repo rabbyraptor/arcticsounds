@@ -13,10 +13,11 @@ if (APP_ENV !== 'production') {
   }])
 }
 
+/* Create routes for dynamic routing */
 import axios from 'axios'
 let dynamicRoutes = () => {
   let routes = [];
- return axios.get('https://s3.amazonaws.com/goeventweb-static.greencopper.com/bb85e8e858594a138ef3f31c06581fc0/arcticsoundfestival-2019/data/eng/artists.json').then(res => {
+ return axios.get('https://s3.amazonaws.com/goeventweb-static.greencopper.com/' + process.env.GREENCOPPER_GOEVENT_HASH + '/arcticsoundfestival-2019/data/eng/artists.json').then(res => {
     for(let i in res.data){
       routes.push(res.data[i].slug)
     }  
