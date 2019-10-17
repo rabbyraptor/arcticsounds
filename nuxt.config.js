@@ -13,10 +13,10 @@ if (APP_ENV !== 'production') {
   }])
 }
 
-import data from './static/routes.json'
+import axios from 'axios'
 let dynamicRoutes = () => {
- return new Promise(resolve => {
-   resolve(data.map(el => `lineup/${el.slug}`))
+ return axios.get('https://s3.amazonaws.com/goeventweb-static.greencopper.com/bb85e8e858594a138ef3f31c06581fc0/arcticsoundfestival-2019/data/eng/artists.json').then(res => {
+   return res.data.map(artist => `/product/${artist.slug}`)
  })
 }
 
