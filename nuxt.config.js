@@ -1,5 +1,4 @@
 const APP_ENV = process.env.APP_ENV || 'local';
-const axios = require("axios").default;
 
 let modules = [
   '@nuxtjs/dotenv',
@@ -12,6 +11,13 @@ if (APP_ENV !== 'production') {
     UserAgent: '*',
     Disallow: '/',
   }])
+}
+
+import data from './static/routes.json'
+let dynamicRoutes = () => {
+ return new Promise(resolve => {
+   resolve(data.map(el => `lineup/${el.slug}`))
+ })
 }
 
 module.exports = {
@@ -101,21 +107,7 @@ module.exports = {
   ** Generate configuration
   */
   generate: {
-    routes: function () {
-      return axios
-        .get(
-          "~/assets/routes.json"
-        )
-        .then((res) => {
-          return res.map((artist) => {
-            return {
-              route: 'lineup' + artist.slug
-            }
-          })
-        })
-          
-
-    }
+    routes: dynamicRoutes
   }
 
 
