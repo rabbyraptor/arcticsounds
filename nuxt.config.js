@@ -18,9 +18,9 @@ let dynamicRoutes = () => {
   let routes = [];
  return axios.get('https://s3.amazonaws.com/goeventweb-static.greencopper.com/bb85e8e858594a138ef3f31c06581fc0/arcticsoundfestival-2019/data/eng/artists.json').then(res => {
     for(let i in res.data){
-      routes.push(res.data[i])
+      routes.push(res.data[i].slug)
     }  
-    return routes.map(artist => `/product/${artist.id}`)
+    return routes.map(slug => `/lineup/${slug}`)
  })
 }
 
