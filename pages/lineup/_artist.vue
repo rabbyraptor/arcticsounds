@@ -38,9 +38,7 @@
         <embedded-player v-if="youtubeLink" type="Youtube" :link="youtubeLink" />
       </div>
     </div>
-    <div style="margin:auto; color: white;" v-else>
-      <span>Loading Artist...</span>
-    </div>
+    <div style="color: white;" v-else>Loading Artist...</div>
   </section>
 </template>
 
@@ -210,20 +208,6 @@ export default {
         }
       }
       return someLinks;
-    },
-    routes() {
-      return axios
-        .get(
-          "https://s3.amazonaws.com/goeventweb-static.greencopper.com/bb85e8e858594a138ef3f31c06581fc0/arcticsoundfestival-2019/data/eng/artists.json"
-        )
-        .then(res => {
-          return res.data.map(artist => {
-            return {
-              route: "/lineup/" + artist.slug,
-              payload: artist
-            };
-          });
-        });
     }
   },
   components: {
