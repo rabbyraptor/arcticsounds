@@ -67,7 +67,9 @@ export default {
       this.setArtist();
     }
   },
-  mounted() {},
+  mounted() {
+    this.setArtist();
+  },
   methods: {
     setArtist() {
       if (this.artistList) {
