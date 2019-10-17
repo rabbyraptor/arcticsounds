@@ -1,4 +1,5 @@
 const APP_ENV = process.env.APP_ENV || 'local';
+const axios = require("axios").default;
 
 let modules = [
   '@nuxtjs/dotenv',
@@ -100,16 +101,19 @@ module.exports = {
   ** Generate configuration
   */
   generate: {
-    routes: function () {
-      return axios.get("https://s3.amazonaws.com/goeventweb-static.greencopper.com/bb85e8e858594a138ef3f31c06581fc0/arcticsoundfestival-2019/data/eng/artists.json")
-        .then((res) => {
-          return res.data.map((artist) => {
+    routes: function() {
+      return axios
+        .get(
+          "https://s3.amazonaws.com/goeventweb-static.greencopper.com/bb85e8e858594a138ef3f31c06581fc0/arcticsoundfestival-2019/data/eng/artists.json"
+        )
+        .then(res => {
+          return res.data.map(artist => {
             return {
-              route: '/lineup/' + artist.slug,
+              route: "/lineup/" + artist.slug,
               payload: artist
-            }
-          })
-        })
+            };
+          });
+        });
     }
   }
 
