@@ -1,21 +1,23 @@
 <template>
   <div class="program-section">
-    <h1>Arctic Sounds Program 2019</h1>
+    <h1>Program</h1>
     <div class="schedule">
-      <div class="day" v-for="day in dates">
+      <div class="day" v-for="day in dates" :key="day">
         <div class="weekday">
           <h2>{{ getWeekday(day) }}</h2>
         </div>
-        <div class="row" v-for="venue in venues" v-show="showsFromVenue(venue, day).length > 0">
+        <div class="row" v-for="venue in venues" :key="venue" v-show="showsFromVenue(venue, day).length > 0">
           <div class="venue">
             <h4 class="venue-title">{{ venue }}</h4>
           </div>
-          <div class="show" v-for="show in showsFromVenue(venue, day)">
-            <h5 class="show-time">
-              <span>{{ show.start_time }}</span>
-              <span v-if="show.end_time">– {{ show.end_time.substr(0, 5) }}</span>
-            </h5>
-            <h5>{{ show.title }}</h5>
+          <div class="shows">
+            <div class="show" v-for="show in showsFromVenue(venue, day)">
+              <h5 class="show-time">
+                <span>{{ show.start_time }}</span>
+                <span v-if="show.end_time">– {{ show.end_time.substr(0, 5) }}</span>
+              </h5>
+              <h5>{{ show.title }}</h5>
+            </div>
           </div>
         </div>
       </div>
@@ -40,10 +42,11 @@ export default {
         )
           shows.push({
             title: this.program[i].object.title,
-            end_time: this.program[i].time_end,
-            start_time: this.program[i].time_start.substr(0, 5)
+            start_time: this.program[i].time_start.substr(0, 5),
+            end_time: this.program[i].time_end
           });
-      }
+      }      
+      shows.sort((a, b) => parseInt(a.start_time) - parseInt(b.start_time));
       return shows;
     },
     getWeekday(day) {
