@@ -22,7 +22,6 @@ export default {
       height: "300px"
     };
   },
-  methods: {},
   computed: {
     src() {
       if (this.type == "Spotify") {
