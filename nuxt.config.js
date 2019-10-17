@@ -94,5 +94,22 @@ module.exports = {
   */
   build: {
 
+  },  
+
+  /*
+  ** Generate configuration
+  */
+  generate: {
+    routes: function () {
+      return axios.get("'https://s3.amazonaws.com/goeventweb-static.greencopper.com/" + process.env.GREENCOPPER_GOEVENT_HASH + "/arcticsoundfestival-2019/data/eng/artists.json'")
+      .then((res) => {
+        return res.data.map((id) => {
+          return {
+            route: '/lineup/' + id.slug,
+            payload: slug
+          }
+        })
+      })
+    }
   }
 }
