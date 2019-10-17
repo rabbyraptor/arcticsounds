@@ -38,7 +38,9 @@
         <embedded-player v-if="youtubeLink" type="Youtube" :link="youtubeLink" />
       </div>
     </div>
-    <div style="color: white;" v-else>Loading Artist...</div>
+    <div style="margin:auto; color: white;" v-else>
+      <span>Loading Artist...</span>
+    </div>
   </section>
 </template>
 
