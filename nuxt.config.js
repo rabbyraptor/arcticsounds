@@ -100,6 +100,17 @@ module.exports = {
   ** Generate configuration
   */
   generate: {
+    routes:[
+      '/lineup/xenoblight',
+      '/lineup/ingeborg-oktober'
+    ]
+  }
+
+
+
+
+  /* 
+  generate: {
     routes: function () {
       return axios.get("'https://s3.amazonaws.com/goeventweb-static.greencopper.com/" + process.env.GREENCOPPER_GOEVENT_HASH + "/arcticsoundfestival-2019/data/eng/artists.json'")
       .then((res) => {
@@ -112,4 +123,5 @@ module.exports = {
       })
     }
   }
+  */
 }
