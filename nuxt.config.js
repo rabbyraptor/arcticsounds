@@ -107,7 +107,7 @@ module.exports = {
           "~/assets/routes.json"
         )
         .then((res) => {
-          return res.data.map((artist) => {
+          return res.map((artist) => {
             return {
               route: 'lineup' + artist.slug
             }
