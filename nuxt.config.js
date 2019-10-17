@@ -104,7 +104,7 @@ module.exports = {
     routes: function () {
       return axios
         .get(
-          "./routes.json"
+          "~/assets/routes.json"
         )
         .then((res) => {
           return res.data.map((artist) => {
