@@ -19,7 +19,7 @@
             <div class="show" v-for="show in showsFromVenue(venue, day)">
               <h5 class="show-time">
                 <span>{{ get24hTime(show.start_time) }}</span>
-                <span v-if="show.end_time">– {{ show.end_time.substr(0, 5) }}</span>
+                <span v-if="show.end_time">- {{ show.end_time.substr(0, 5) }}</span>
               </h5>
               <h5>{{ show.title }}</h5>
             </div>
