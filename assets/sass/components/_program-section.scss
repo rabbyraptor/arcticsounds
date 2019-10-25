@@ -23,18 +23,14 @@
   }
 
   .venue{
-    padding: .5em 2em;
+    padding: .5em 1em;
     display: flex;
-    min-width:200px;
     align-items: flex-start;
     background-color:$font-light-grey;
     
     .venue-title{
       color: $white;
     }
-  }
-  .shows{
-    padding: .5em 1em;
   }
 
   .show{
@@ -44,7 +40,7 @@
     overflow-wrap: break-word;
     background-color: $black;
     display: grid;
-    grid-template-columns: auto 1fr;
+    grid-template-columns: 85px 1fr;
     column-gap: 2em;
 
     .show-time{
@@ -54,5 +50,10 @@
   
 
 @include mq($removeMobileMenuBreakPoint) {
-
+  .shows{
+    padding: .5em 1em;
+  }
+  .venue{
+    padding: .5em 2em;
+  }
 }
