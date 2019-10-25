@@ -1,5 +1,5 @@
   .program-section {
-    margin: -196px auto auto auto;
+    //margin: auto auto auto auto;
   }
 
   .schedule{
@@ -10,15 +10,12 @@
   }
 
   .weekday{
-    margin: 4em 0 1em 0;
+    margin: 3em 0 1em 1em;
   }
 
   .row{
     display:grid;
     flex-flow: row;
-    border:1px solid $white;
-    overflow-x:auto;
-    background-color: #111;
     margin-bottom: 1em;
   }
   .day .row:first-of-type{
@@ -26,7 +23,7 @@
   }
 
   .venue{
-    padding: .5em 1em;
+    padding: .5em 2em;
     display: flex;
     min-width:200px;
     align-items: flex-start;
@@ -37,23 +34,21 @@
     }
   }
   .shows{
-    display: flex;
-    flex-flow: row;
+    padding: .5em 1em;
   }
 
   .show{
-    padding:1em;
-    width: 180px;
-    height:130px;
+    padding:0.5em 1em;
+    width: 100%;
     position: relative;
     overflow-wrap: break-word;
-    border-right: 1px solid $white;
     background-color: $black;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 2em;
 
     .show-time{
-      padding-bottom:3px;
-      border-bottom:1px solid $white;
-      margin-bottom:3px;
+      
     }
   }
   
