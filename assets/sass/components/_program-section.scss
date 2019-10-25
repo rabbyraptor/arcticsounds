@@ -4,6 +4,7 @@
 
   .schedule{
     display:grid;
+    width:100%;
     grid-template-columns: 100%;
     grid-auto-flow: dense;
     text-align: left;
@@ -11,6 +12,7 @@
 
   .weekday{
     margin: 3em 0 1em 1em;
+    font-size:.8em;
   }
 
   .row{
@@ -24,8 +26,6 @@
 
   .venue{
     padding: .5em 1em;
-    display: flex;
-    align-items: flex-start;
     background-color:$font-light-grey;
     
     .venue-title{
@@ -33,18 +33,29 @@
     }
   }
 
+  .shows{
+    padding:0 1em;
+
+  }
+
   .show{
-    padding:0.5em 1em;
+    padding:0.5em 0em;
     width: 100%;
     position: relative;
     overflow-wrap: break-word;
-    background-color: $black;
     display: grid;
-    grid-template-columns: 85px 1fr;
-    column-gap: 2em;
+    grid-template-columns: 80px 1fr;
+    column-gap: 1.5em;
 
     .show-time{
-      
+      white-space: nowrap;
+    }
+
+    .show-title{
+      word-break: break-word;
+      a{
+        color:$white;
+      }
     }
   }
   
