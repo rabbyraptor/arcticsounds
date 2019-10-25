@@ -1,6 +1,6 @@
 <template>
   <div>
-    <section class="full-width-section">
+    <section class="full-width-section" id="frontpage-section">
       <frontpage-grid :content="frontpageGrid" />
     </section>
     <section class="full-width-section">
