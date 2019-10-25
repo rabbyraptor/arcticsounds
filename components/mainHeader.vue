@@ -49,7 +49,7 @@ export default {
   },
   methods:{
     checkRoute(){
-      if (this.$route.name == "lineup-artist" || this.$route.name == "program") {
+      if (this.$route.name != "index") {
         this.headroom.unpin();
         this.headroom.freeze();
       }else{
