@@ -34,7 +34,7 @@ section {
 }
 
 .full-width-section{
-  padding:0;
+  padding:5% 0;
 }
 
 
@@ -45,11 +45,14 @@ section {
     max-width:1600px;
     margin: 0 auto;
     text-align: center;
-    padding-top: 300px;
+    padding-top: 100px;
     width: 100%;
   }
   section {
     width: 100%;
     padding:5%;
+  }
+  #frontpage-section{
+    padding-top:200px;
   }
 }
