@@ -2,7 +2,7 @@
   <div class="lineup-section">
     <h1>Arctic Sounds Line-up 2019</h1>
     <div class="lineup-grid">
-      <div v-if="artists" v-for="artist in artists" :key="artist._id" class="lineup-artist">
+      <div v-for="artist in artists" :key="artist._id" class="lineup-artist">
         <nuxt-link :to="'lineup/' + artist.slug">
           <div
             class="lineup-image"
@@ -19,6 +19,8 @@
 </template>
 
 <script>
+var _ = require('lodash');
+
 export default {
   data() {
     return {
@@ -27,8 +29,8 @@ export default {
   },
   computed: {
     artists() {
-      return this.$store.getters["artists/getArtists"];
-    }
+      return _.sortBy(this.$store.getters["artists/getArtists"], 'title')
+    },
   }
 };
 </script>

@@ -11,22 +11,6 @@
 
 <script>
 export default {
-  mounted() {
-    /* bmiw.onclick = function() {
-      bm.classList.toggle("open");
-      if (bm.classList.contains("open")) {
-        mobile.style.display = "grid";
-        setTimeout(function() {
-          mobile.style.opacity = 1;
-        }, 1);
-      } else if (!bm.classList.contains("open")) {
-        mobile.style.opacity = 0;
-        setTimeout(function() {
-          mobile.style.display = "none";
-        }, 250);
-      }
-    }; */
-  },
   methods: {
     toggleBurgerMenu() {
       const bm = document.getElementById("burger-menu"),
