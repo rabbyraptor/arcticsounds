@@ -1,6 +1,6 @@
 <template>
-  <section>
-    <program-section/>
+  <section class="full-width-section">
+    <program-section />
   </section>
 </template>
 
