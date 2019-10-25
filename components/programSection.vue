@@ -21,7 +21,9 @@
                 <span>{{ get24hTime(show.start_time) }}</span>
                 <span v-if="show.end_time">- {{ show.end_time.substr(0, 5) }}</span>
               </h5>
-              <h5>{{ show.title }}</h5>
+              <h5 class="show-title">
+                <nuxt-link :to="'/lineup/' + show.slug">{{ show.title }}</nuxt-link>
+              </h5>
             </div>
           </div>
         </div>
@@ -44,18 +46,20 @@ export default {
       for (let i in this.program) {
         if (
           this.program[i].venue.title == venue &&
-          new Date(this.program[i].date_start).getDate() == day.substr(0,2)
+          new Date(this.program[i].date_start).getDate() == day.substr(0, 2)
           //new Date(this.program[i].date_start).getDate() == new Date(day).getDate()
         ) {
           if (parseInt(this.program[i].time_start.substr(0, 5)) <= 4) {
             shows.push({
               title: this.program[i].object.title,
+              slug: this.program[i].slug,
               start_time: "24" + this.program[i].time_start.substr(2, 3),
               end_time: this.program[i].time_end
             });
           } else {
             shows.push({
               title: this.program[i].object.title,
+              slug: this.program[i].slug,
               start_time: this.program[i].time_start.substr(0, 5),
               end_time: this.program[i].time_end
             });
@@ -113,7 +117,7 @@ export default {
     venues() {
       let venues = [];
       for (let i in this.program) {
-          venues.push(this.program[i].venue.title);
+        venues.push(this.program[i].venue.title);
       }
       return _.uniqWith(venues, _.isEqual);
     },
@@ -128,7 +132,9 @@ export default {
       let sortedDates = [];
       for (let i in this.fullDates) {
         sortedDates.push(
-          this.fullDates[i].getDate() + " " + this.getMonthName(this.fullDates[i])
+          this.fullDates[i].getDate() +
+            " " +
+            this.getMonthName(this.fullDates[i])
         );
       }
       return sortedDates.sort();
