@@ -1,35 +1,62 @@
 <template>
   <section class="artist-presentation">
-    <div class="artist-content" v-if="this.artistInfo">
+    <div class="artist-content" v-if="artistInfo">
       <div class="left-side">
         <div class="artist-image">
           <span
             class="artist-photo-credit"
-            v-if="this.artistInfo.photoCredit"
-          >Photo: {{ this.artistInfo.photoCredit }}</span>
+            v-if="artistInfo.photoCredit"
+          >Photo: {{ artistInfo.photoCredit }}</span>
           <img :src="artistImage" />
         </div>
         <h2 class="artist-title">
-          {{this.artistInfo.title}}
-          <span
-            v-if="this.artistInfo.country"
-          >({{ this.artistInfo.country }})</span>
+          {{ artistInfo.title }}
+          <span v-if="artistInfo.country">({{ artistInfo.country }})</span>
         </h2>
-        <h3 v-if="this.artistInfo.style" class="artist-style">{{this.artistInfo.style}}</h3>
-        <div class="artist-description" v-html="this.artistInfo.description" />
+        <h4 v-if="artistInfo.style" class="artist-style">{{artistInfo.style}}</h4>
+        <div class="artist-description" v-html="artistInfo.description" />
       </div>
+
       <div class="right-side">
-        <div class="artist-links">
-          <a
-            class="artist-link"
-            v-for="link in this.referralLinks"
-            :key="link.title"
-            :href="link.url"
-            target="_blank"
-          >
-            <svg-icon class="svg-icon" :type="link.title" />
-            <h4>{{ link.title }}</h4>
-          </a>
+        <div class="artist-info">
+          <h4 v-if="artistInfo.tags.length > 0">
+            Tags
+            <br />
+            <span>{{ artistTags() }}</span>
+          </h4>
+          <h4>
+            Title
+            <br />
+            <span>{{ artistInfo.title }}</span>
+          </h4>
+          <h4 class="artist-show-time">
+            Time
+            <br />
+            <span>{{ artistProgram.time_start.substr(0, 5) }}</span>
+            <span v-if="artistProgram.time_end">- {{ artistProgram.time_end.substr(0, 5) }}</span>
+          </h4>
+          <h4>
+            Venue
+            <br />
+            <span>{{ artistProgram.venue.title }}</span>
+          </h4>
+          <div class="artist-links" v-if="this.referralLinks.length != 0">
+            <h4>
+              Links <br />
+              <div class="artist-link-wrapper">
+                <a
+                  class="artist-link"
+                  v-for="link in this.referralLinks"
+                  :key="link.title"
+                  :href="link.url"
+                  target="_blank"
+                >
+                  <svg-icon class="svg-icon" :type="link.title" />
+                  <span>{{ link.title }}</span>
+                </a>
+              </div>
+            </h4>
+          </div>
         </div>
 
         <embedded-player v-if="spotifyLink" type="Spotify" :link="spotifyLink" />
@@ -93,9 +120,35 @@ export default {
         .catch(function(error) {
           console.log(error);
         });
-    }
+    },
+    artistTags(){
+      let tags = [];
+      const tag = this.artistInfo.tags;
+      for(let i in this.artistInfo.tags){
+        if (tag[i] == 48){
+          tags.push("Music")
+        }
+        if (tag[i] == 95){
+          tags.push("Special Guest")
+        }
+      }
+      return tags;
+    },
   },
   computed: {
+    program() {
+      return this.$store.getters["program/getProgram"];
+    },
+    artistProgram() {
+      if (this.program) {
+        for (let i in this.program) {
+          if (this.program[i].slug == this.slug) {
+            return this.program[i];
+          }
+        }
+      }
+      return null;
+    },
     artistList() {
       return this.$store.state.artists.artists;
     },
