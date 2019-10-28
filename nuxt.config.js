@@ -70,7 +70,15 @@ module.exports = {
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#2073a5' },
+  /* loading: { 
+    color: '#2073a5'
+  }, */
+
+  loadingIndicator: {
+    name: 'circle',
+    color: '#000',
+    background: '#fff'
+  },
 
   /*
   ** Global CSS
