@@ -58,20 +58,26 @@
         z-index: 1;
 
         .lineup-image {
-          transform: scale(1.02);
           box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.6);
           border-radius: 4px;
+        }
+        .lineup-title{
+          transform: translateZ(22px);
+          background-color: rgba(0, 0, 0, 0.7);
         }
       }
 
       .lineup-image {
+        transform-style: preserve-3d;
+        transform: perspective(1000px);
         box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0);
         transition: all 0.2s ease-out;
       }
 
       .lineup-title {
-        max-width: 95%;
+        max-width: 90%;
         font-size: .9em;
+        transition: all 0.2s ease;
       }
     }
   }
