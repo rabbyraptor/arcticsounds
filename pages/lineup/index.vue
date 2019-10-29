@@ -8,13 +8,13 @@
 import lineupSection from '../../components/lineupSection'
 
 export default {
-  fetch ({ store, params }) {
+  async fetch ({ store, params }) {
       let promises = [
         store.dispatch("artists/getData"),
         store.dispatch("program/getData")
       ];
 
-      return Promise.all(promises);
+      return await Promise.all(promises);
   },
   components: {
     lineupSection
