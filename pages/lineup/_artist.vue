@@ -86,10 +86,14 @@ export default {
 
     return await Promise.all(promises);
   },
+  asyncData({isDev, route, store, env, params, query, req, res, redirect, error}) {
+    return{
+      slug: route.params.artist,
+      goeventHash: process.env.GREENCOPPER_GOEVENT_HASH,
+    }
+  },
   data() {
     return {
-      goeventHash: process.env.GREENCOPPER_GOEVENT_HASH,
-      slug: this.$route.params.artist,
       artist: {},
       artistInfo: null
     };
