@@ -60,6 +60,28 @@
             color: $white;
           }
       }
+    .artist-tags{
+
+      .artist-tag{
+        padding:.2em .4em;
+        border-radius:3px;
+        margin: .25em .5em 0 0;
+        display: inline-flex;
+        font-size:.9em;
+        //line-height: .9;
+        
+
+        span{
+          align-items: center;
+          margin-right: 4px;
+          line-height: .9;
+        }
+      }
+      .artist-tag:last-of-type{
+        margin-right:0;
+      }
+    }
+    
   }
 
   .artist-links {
