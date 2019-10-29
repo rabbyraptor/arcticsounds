@@ -6,7 +6,11 @@ export const state = () => ({
 })
 
 export const actions = {
-    async getData ({commit}) {
+    async getData ({commit, state}) {
+        if(state.program) {
+            return Promise.resolve();
+        }
+
         return await axios
             .get(
                 "https://s3.amazonaws.com/goeventweb-static.greencopper.com/" + goeventHash + "/arcticsoundfestival-2019/data/eng/shows.json"

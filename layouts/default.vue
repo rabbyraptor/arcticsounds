@@ -15,10 +15,6 @@ import mainFooter from "~/components/mainFooter.vue";
 import BackToTop from "~/components/BackToTop.vue";
 
 export default {
-  created() {
-    this.$store.dispatch("artists/getData");
-    this.$store.dispatch("program/getData");
-  },
   components: {
     mainHeader,
     mainFooter,

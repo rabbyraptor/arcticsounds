@@ -77,6 +77,14 @@ import embeddedPlayer from "../../components/embeddedPlayer";
 import svgIcon from "../../components/svgIcon";
 
 export default {
+  fetch ({ store, params }) {
+      let promises = [
+        store.dispatch("artists/getData"),
+        store.dispatch("program/getData")
+      ];
+
+      return Promise.all(promises);
+  },
   data() {
     return {
       goeventHash: process.env.GREENCOPPER_GOEVENT_HASH,
