@@ -3,7 +3,7 @@ docker-compose build
 docker-compose up -d
 
 echo "*** Updating node dependencies... ***"
-docker-compose exec nuxtapp node -v  > .nvmrc
+#docker-compose exec nuxtapp node -v  > .nvmrc
 docker-compose exec nuxtapp yarn install
 
 #SASS Framework Donwload from boilerplate
