@@ -19,10 +19,13 @@
 
       <div class="right-side">
         <div class="artist-info">
-          <h4 v-if="artistInfo.tags.length > 0">
+          <h4 class="artist-tags" v-if="artistInfo.tags.length > 0">
             Tags
             <br />
-            <span>{{ artistTags() }}</span>
+            <div v-for="tag in artistTags" class="artist-tag" style="background-color:white">
+              <span :style="{color: tag.color}">&#9679;</span>
+              {{ tag.name }}
+            </div>
           </h4>
           <h4>
             Title
@@ -83,43 +86,25 @@ export default {
       store.dispatch("artists/getData"),
       store.dispatch("program/getData")
     ];
-
     return await Promise.all(promises);
-  },
-  asyncData({isDev, route, store, env, params, query, req, res, redirect, error}) {
-    return{
-      slug: route.params.artist,
-      goeventHash: process.env.GREENCOPPER_GOEVENT_HASH,
-    }
   },
   data() {
     return {
-      artist: {},
-      artistInfo: null
+      goeventHash: process.env.GREENCOPPER_GOEVENT_HASH,
+      slug: this.$route.params.artist,
+      artist: this.$store.getters["artists/getArtistBySlug"](this.$route.params.artist),
+      artistInfo: null,
     };
   },
+  created() {
+    this.setArtistInfo();
+  },
   watch: {
-    artistList() {
-      this.setArtist();
-    },
     artist() {
       this.setArtistInfo();
     },
-    slug() {
-      this.setArtist();
-    }
-  },
-  mounted() {
-    this.setArtist();
   },
   methods: {
-    setArtist() {
-      if (this.artistList) {
-        this.artist = this.$store.getters["artists/getArtistBySlug"](
-          this.$route.params.artist
-        );
-      }
-    },
     async setArtistInfo() {
       await axios
         .get(
@@ -134,21 +119,28 @@ export default {
           console.log(error);
         });
     },
+    
+  },
+  computed: {
     artistTags() {
       let tags = [];
-      const tag = this.artistInfo.tags;
-      for (let i in this.artistInfo.tags) {
+      const tag = this.artist.tags;
+      for (let i in this.artist.tags) {
         if (tag[i] == 48) {
-          tags.push("Music");
+          tags.push({ name: "Music", color: "rgb(141, 72, 171)" });
         }
         if (tag[i] == 95) {
-          tags.push("Special Guest");
+          tags.push({ name: "Special Guest", color: "rgb(230, 85, 248)" });
+        }
+        if (tag[i] == 97) {
+          tags.push({ name: "Nordic Playgrounds", color: "rgb(51, 127, 195)" });
+        }
+        if (tag[i] == 139) {
+          tags.push("Workshop");
         }
       }
       return tags;
-    }
-  },
-  computed: {
+    },
     program() {
       return this.$store.getters["program/getProgram"];
     },
@@ -161,9 +153,6 @@ export default {
         }
       }
       return null;
-    },
-    artistList() {
-      return this.$store.state.artists.artists;
     },
     artistImage() {
       if (this.artistInfo.photo_suffix) {
