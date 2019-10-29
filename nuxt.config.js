@@ -21,7 +21,7 @@ let dynamicRoutes = () => {
     for(let i in res.data){
       routes.push(res.data[i].slug)
     }  
-    return routes.map(slug => `/lineup/${slug}`)
+    return routes.map(slug => `/lineup/${slug}/`)
  })
 }
 
