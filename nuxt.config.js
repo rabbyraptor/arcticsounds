@@ -59,7 +59,7 @@ module.exports = {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       /* Google PLAY Smart Banner */
-      { rel: 'stylesheet', href: '/meta/css/smartbanner.min.css' },
+      { rel: 'preload', href: '/meta/css/smartbanner.min.css', as: 'style', onload: 'this.onload=null;this.rel="stylesheet"' },
     ],
     script: [
       /* Google Play Smart Banner */
