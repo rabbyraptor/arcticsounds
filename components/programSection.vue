@@ -47,7 +47,6 @@ export default {
         if (
           this.program[i].venue.title == venue &&
           new Date(this.program[i].date_start).getDate() == day.substr(0, 2)
-          //new Date(this.program[i].date_start).getDate() == new Date(day).getDate()
         ) {
           if (parseInt(this.program[i].time_start.substr(0, 5)) <= 4) {
             shows.push({
