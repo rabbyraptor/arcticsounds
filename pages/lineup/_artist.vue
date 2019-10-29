@@ -42,7 +42,8 @@
           </h4>
           <div class="artist-links" v-if="this.referralLinks.length != 0">
             <h4>
-              Links <br />
+              Links
+              <br />
               <div class="artist-link-wrapper">
                 <a
                   class="artist-link"
@@ -77,13 +78,13 @@ import embeddedPlayer from "../../components/embeddedPlayer";
 import svgIcon from "../../components/svgIcon";
 
 export default {
-  async fetch ({ store, params }) {
-      let promises = [
-        store.dispatch("artists/getData"),
-        store.dispatch("program/getData")
-      ];
+  async fetch({ store, params }) {
+    let promises = [
+      store.dispatch("artists/getData"),
+      store.dispatch("program/getData")
+    ];
 
-      return await Promise.all(promises);
+    return await Promise.all(promises);
   },
   data() {
     return {
@@ -129,19 +130,19 @@ export default {
           console.log(error);
         });
     },
-    artistTags(){
+    artistTags() {
       let tags = [];
       const tag = this.artistInfo.tags;
-      for(let i in this.artistInfo.tags){
-        if (tag[i] == 48){
-          tags.push("Music")
+      for (let i in this.artistInfo.tags) {
+        if (tag[i] == 48) {
+          tags.push("Music");
         }
-        if (tag[i] == 95){
-          tags.push("Special Guest")
+        if (tag[i] == 95) {
+          tags.push("Special Guest");
         }
       }
       return tags;
-    },
+    }
   },
   computed: {
     program() {
@@ -161,13 +162,17 @@ export default {
       return this.$store.state.artists.artists;
     },
     artistImage() {
-      return (
-        "//goevent-images.s3.amazonaws.com/arcticsoundfestival-2019/b041a9ed/web/xl_artist_" +
-        this.artistInfo._id +
-        "_" +
-        this.artistInfo.photo_suffix +
-        ".jpg"
-      );
+      if (this.artistInfo.photo_suffix) {
+        return (
+          "//goevent-images.s3.amazonaws.com/arcticsoundfestival-2019/b041a9ed/web/xl_artist_" +
+          this.artistInfo._id +
+          "_" +
+          this.artistInfo.photo_suffix +
+          ".jpg"
+        );
+      } else {
+        return "/img/image-placeholder.png";
+      }
     },
     artistLinks() {
       let links = [
