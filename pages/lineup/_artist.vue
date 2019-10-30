@@ -98,11 +98,11 @@ export default {
       artistInfo: {}
     };
   },
-  created() {
+  mounted() {
     this.getArtistInfo();
   },
   watch: {
-    artist() {
+    slug() {
       this.getArtistInfo();
     }
   },
