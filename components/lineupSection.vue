@@ -1,6 +1,6 @@
 <template>
   <div class="lineup-section">
-    <h1>Arctic Sounds Line-up 2019</h1>
+    <h1>Line-up 2019</h1>
     <div class="lineup-grid">
       <div v-for="artist in artists" :key="artist._id" class="lineup-artist">
         <nuxt-link :to="'/lineup/' + artist.slug">
