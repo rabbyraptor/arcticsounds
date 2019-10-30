@@ -49,79 +49,72 @@
 
   .artist-info {
     text-align: left;
-    padding: .2em 1em;
+    padding: 0.2em 1em;
     border: 1px solid $white;
     margin-bottom: 2em;
-      h4 {
-        margin: 0.8em 0;
-        color: $font-light-grey;
-        line-height: 1.1;
-          span {
-            color: $white;
-          }
-      }
-    .artist-tags{
-
-      .artist-tag{
-        padding:.2em .4em;
-        border-radius:3px;
-        margin: .25em .5em 0 0;
-        display: inline-flex;
-        font-size:.9em;
-        //line-height: .9;
-        
-
-        span{
-          align-items: center;
-          margin-right: 4px;
-          line-height: .9;
-        }
-      }
-      .artist-tag:last-of-type{
-        margin-right:0;
+    h4 {
+      margin: 0.8em 0;
+      color: $font-light-grey;
+      line-height: 1.1;
+      span {
+        color: $white;
       }
     }
-    
+    .artist-tags {
+      .artist-tag {
+        padding: 0.2em 0.4em;
+        border-radius: 3px;
+        margin: 0.25em 0.5em 0 0;
+        display: inline-block;
+        font-size: 1em;
+
+        span {
+          position: relative;
+          top:-1px;
+          margin-right: -1px;
+        }
+      }
+      .artist-tag:last-of-type {
+        margin-right: 0;
+      }
+    }
   }
 
   .artist-links {
-
-    .artist-link-wrapper{
+    .artist-link-wrapper {
       display: grid;
       grid-template-columns: repeat(2, minmax(150px, 1fr));
     }
     .artist-link {
       display: flex;
-      padding: .5em;
-      margin: .25em .5em .25em 0;
+      padding: 0.5em;
+      margin: 0.25em 0.5em 0.25em 0;
       align-items: center;
-      border:1px solid white;
-      transition: all .2s;
+      border: 1px solid $white;
+      transition: all 0.2s;
 
-      span{
-        color:$white;
-        font-size: .9em;
-        transition: all .2s;
-
+      span {
+        color: $white;
+        font-size: 0.9em;
+        transition: all 0.2s;
       }
     }
 
-    .artist-link:hover{
+    .artist-link:hover {
       background-color: $white;
     }
 
-    .artist-link:hover span, .artist-link:hover .svg-icon{
-      color:$font-light-grey;
+    .artist-link:hover span,
+    .artist-link:hover .svg-icon {
+      color: $font-light-grey;
       fill: $font-light-grey;
     }
     .svg-icon {
       height: 16px;
       width: 16px;
-      margin-right: .5em;
-      transition: all .2s;
-
+      margin-right: 0.5em;
+      transition: all 0.2s;
     }
-    
   }
   .embedded-link {
     margin: 0 0 2em 0;
@@ -152,6 +145,5 @@
     .artist-description {
       font-size: 1.3em;
     }
-
   }
 }
