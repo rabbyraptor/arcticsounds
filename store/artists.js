@@ -6,11 +6,11 @@ export const state = () => ({
 })
 
 export const actions = {
-    async getData ({commit, state}) {
-        if(state.artists) {
+    async getData({ commit, state }) {
+        if (state.artists) {
             return Promise.resolve();
         }
-        
+
         return await axios
             .get(
                 "https://s3.amazonaws.com/goeventweb-static.greencopper.com/" + goeventHash + "/arcticsoundfestival-2019/data/eng/artists.json"
@@ -33,16 +33,15 @@ export const getters = {
         return state.artists;
     },
     getArtistBySlug: (state) => (slug) => {
-        if(state.artists) {
-            for(let i in state.artists) {
-                if(state.artists[i].slug == slug) {
+        if (state.artists) {
+            for (let i in state.artists) {
+                if (state.artists[i].slug == slug) {
                     return state.artists[i];
                 }
             }
         }
 
         return null;
-    },
-    
+    }
 }
 
