@@ -1,6 +1,6 @@
 <template>
   <section class="artist-presentation">
-    <div class="artist-content" v-if="artistInfo">
+    <div class="artist-content">
       <div class="left-side">
         <div class="artist-image">
           <span
@@ -10,27 +10,30 @@
           <img :src="artistImage" />
         </div>
         <h2 class="artist-title">
-          {{ artistInfo.title }}
+          {{ artist.title }}
           <span v-if="artistInfo.country">({{ artistInfo.country }})</span>
         </h2>
         <h4 v-if="artistInfo.style" class="artist-style">{{artistInfo.style}}</h4>
-        <div class="artist-description" v-html="artistInfo.description" />
+        <div class="artist-description" v-if="artistInfo.description" v-html="artistInfo.description" />
+        <div style="margin:auto; color: white;" v-else>
+          <span>Loading description ... </span>
+        </div>        
       </div>
 
       <div class="right-side">
         <div class="artist-info">
-          <h4 class="artist-tags" v-if="artistInfo.tags.length > 0">
+          <h4 class="artist-tags" v-if="artistTags.length != 0">
             Tags
             <br />
             <div v-for="tag in artistTags" class="artist-tag" style="background-color:white">
-              <span :style="{color: tag.color}">&#9679;</span>
+              <span v-if="tag.color" :style="{color: tag.color}">&#9679;</span>
               {{ tag.name }}
             </div>
           </h4>
           <h4>
             Title
             <br />
-            <span>{{ artistInfo.title }}</span>
+            <span>{{ artist.title }}</span>
           </h4>
           <h4 class="artist-show-time">
             Time
@@ -43,14 +46,14 @@
             <br />
             <span>{{ artistProgram.venue.title }}</span>
           </h4>
-          <div class="artist-links" v-if="this.referralLinks.length != 0">
+          <div class="artist-links" v-if="referralLinks.length != 0">
             <h4>
               Links
               <br />
               <div class="artist-link-wrapper">
                 <a
                   class="artist-link"
-                  v-for="link in this.referralLinks"
+                  v-for="link in referralLinks"
                   :key="link.title"
                   :href="link.url"
                   target="_blank"
@@ -68,9 +71,6 @@
         <embedded-player v-if="applemusicLink" type="Apple Music" :link="applemusicLink" />
         <embedded-player v-if="youtubeLink" type="Youtube" :link="youtubeLink" />
       </div>
-    </div>
-    <div style="margin:auto; color: white;" v-else>
-      <span>Loading Artist...</span>
     </div>
   </section>
 </template>
@@ -92,21 +92,23 @@ export default {
     return {
       goeventHash: process.env.GREENCOPPER_GOEVENT_HASH,
       slug: this.$route.params.artist,
-      artist: this.$store.getters["artists/getArtistBySlug"](this.$route.params.artist),
-      artistInfo: null,
+      artist: this.$store.getters["artists/getArtistBySlug"](
+        this.$route.params.artist
+      ),
+      artistInfo: {}
     };
   },
   created() {
-    this.setArtistInfo();
+    this.getArtistInfo();
   },
   watch: {
     artist() {
-      this.setArtistInfo();
-    },
+      this.getArtistInfo();
+    }
   },
   methods: {
-    async setArtistInfo() {
-      await axios
+    async getArtistInfo(){
+      return await axios
         .get(
           "https://s3.amazonaws.com/goeventweb-static.greencopper.com/" +
             this.goeventHash +
@@ -114,12 +116,13 @@ export default {
             this.artist._id +
             ".json"
         )
-        .then(response => (this.artistInfo = response.data))
+        .then(res => {
+          this.artistInfo = res.data;
+        })
         .catch(function(error) {
           console.log(error);
         });
     },
-    
   },
   computed: {
     artistTags() {
@@ -136,7 +139,19 @@ export default {
           tags.push({ name: "Nordic Playgrounds", color: "rgb(51, 127, 195)" });
         }
         if (tag[i] == 139) {
-          tags.push("Workshop");
+          tags.push({ name: "Workshop", color: null });
+        }
+        if (tag[i] == 140) {
+          tags.push({ name: "Network", color: null });
+        }
+        if (tag[i] == 141) {
+          tags.push({ name: "Talk", color: null });
+        }
+        if (tag[i] == 142) {
+          tags.push({ name: "Out and about", color: "rgb(200, 203, 204)" });
+        }
+        if (tag[i] == 211) {
+          tags.push({ name: "Other", color: "rgb(228, 77, 66)" });
         }
       }
       return tags;
@@ -155,12 +170,12 @@ export default {
       return null;
     },
     artistImage() {
-      if (this.artistInfo.photo_suffix) {
+      if (this.artist.photo_suffix) {
         return (
           "//goevent-images.s3.amazonaws.com/arcticsoundfestival-2019/b041a9ed/web/xl_artist_" +
-          this.artistInfo._id +
+          this.artist._id +
           "_" +
-          this.artistInfo.photo_suffix +
+          this.artist.photo_suffix +
           ".jpg"
         );
       } else {
