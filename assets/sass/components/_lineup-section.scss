@@ -5,6 +5,10 @@
       margin-bottom: 1em;
     }
 
+    .lineup-filter{
+      margin: 0 0 2em 0;
+    }
+
     .lineup-grid {
       display: grid;
       grid-template-columns: repeat(2, 50%); /* */
@@ -43,6 +47,15 @@
         margin-bottom:-50%;
         font-size:.7em;
         max-width: 90%;
+      }
+      .lineup-artist-tag{
+        
+        span{
+          position: absolute;
+          font-size: 3em;
+        top:-18px;
+        left:0;
+        }
       }
     }
   }
