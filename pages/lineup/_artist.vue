@@ -1,5 +1,5 @@
 <template>
-  <section class="artist-presentation">
+  <section>
     <artist-presentation/>
   </section>
 </template>
