@@ -1,8 +1,6 @@
 .artist-presentation {
-  padding-top: 2.5%;
-  .artist-content {
-    width: 100%;
-  }
+  width: 100%;
+  
   .artist-image {
     width: 100%;
     background-repeat: no-repeat;
@@ -123,11 +121,9 @@
 
 @include mq($removeMobileMenuBreakPoint) {
   .artist-presentation {
-    .artist-content {
-      display: grid;
-      grid-template-columns: 60% 35%;
-      justify-content: space-between;
-    }
+    display: grid;
+    grid-template-columns: 60% 35%;
+    justify-content: space-between;
     .artist-image {
       max-height: 500px;
       img {
