@@ -1,5 +1,5 @@
 <template>
-  <div class="artist-content">
+  <div class="artist-presentation">
     <div class="left-side">
       <div class="artist-image">
         <span
@@ -80,7 +80,7 @@ import embeddedPlayer from "./embeddedPlayer";
 import svgIcon from "./svgIcon";
 
 export default {
-  props:{
+  props: {
     artist: {}
   },
   data() {
@@ -99,7 +99,7 @@ export default {
     }
   },
   methods: {
-    async getArtistInfo(){
+    async getArtistInfo() {
       return await axios
         .get(
           "https://s3.amazonaws.com/goeventweb-static.greencopper.com/" +
@@ -114,36 +114,37 @@ export default {
         .catch(function(error) {
           console.log(error);
         });
-    },
+    }
   },
   computed: {
     artistTags() {
       let tags = [];
-      const tag = this.artist.tags;
       for (let i in this.artist.tags) {
-        if (tag[i] == 48) {
-          tags.push({ name: "Music", color: "rgb(141, 72, 171)" });
-        }
-        if (tag[i] == 95) {
-          tags.push({ name: "Special Guest", color: "rgb(230, 85, 248)" });
-        }
-        if (tag[i] == 97) {
-          tags.push({ name: "Nordic Playgrounds", color: "rgb(51, 127, 195)" });
-        }
-        if (tag[i] == 139) {
-          tags.push({ name: "Workshop", color: null });
-        }
-        if (tag[i] == 140) {
-          tags.push({ name: "Network", color: null });
-        }
-        if (tag[i] == 141) {
-          tags.push({ name: "Talk", color: null });
-        }
-        if (tag[i] == 142) {
-          tags.push({ name: "Out and about", color: "rgb(200, 203, 204)" });
-        }
-        if (tag[i] == 211) {
-          tags.push({ name: "Other", color: "rgb(228, 77, 66)" });
+        switch (this.artist.tags[i]) {
+          case 48:
+            tags.push({ name: "Music", color: "rgb(141, 72, 171)" });
+            break;
+          case 95:
+            tags.push({ name: "Special Guest", color: "rgb(230, 85, 248)" });
+            break;
+          case 97:
+            tags.push({ name: "Nordic Playgrounds", color: "rgb(51, 127, 195)" });
+            break;
+          case 139:
+            tags.push({ name: "Workshop", color: null });
+            break;
+          case 140:
+            tags.push({ name: "Network", color: null });
+            break;
+          case 141:
+            tags.push({ name: "Talk", color: null });
+            break;
+          case 142:
+            tags.push({ name: "Out and about", color: "rgb(200, 203, 204)" });
+            break;
+          case 211:
+            tags.push({ name: "Other", color: "rgb(228, 77, 66)" });
+            break;
         }
       }
       return tags;
@@ -152,7 +153,9 @@ export default {
       return this.$store.getters["program/getProgram"];
     },
     artist() {
-      return this.$store.getters["artists/getArtistBySlug"](this.$route.params.artist)
+      return this.$store.getters["artists/getArtistBySlug"](
+        this.$route.params.artist
+      );
     },
     artistProgram() {
       if (this.program) {
