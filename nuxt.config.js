@@ -120,6 +120,6 @@ module.exports = {
   */
   generate: {
     routes: dynamicRoutes,
-    interval: 150
+    interval: 500
   }
 }
