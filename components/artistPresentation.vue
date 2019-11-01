@@ -152,11 +152,6 @@ export default {
     program() {
       return this.$store.getters["program/getProgram"];
     },
-    artist() {
-      return this.$store.getters["artists/getArtistBySlug"](
-        this.$route.params.artist
-      );
-    },
     artistProgram() {
       if (this.program) {
         for (let i in this.program) {
