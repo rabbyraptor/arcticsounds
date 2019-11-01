@@ -1,65 +1,67 @@
-  .lineup-section {
-    margin: auto;
+.lineup-section {
+  margin: auto;
 
-    h1 {
-      margin-bottom: 1em;
+  h1 {
+    margin-bottom: 1em;
+  }
+
+  .lineup-filter {
+    margin: 0 0 2em 0;
+  }
+
+  .lineup-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 50%); /* */
+    grid-auto-flow: dense;
+
+    .lineup-artist {
+      z-index: 0;
     }
 
-    .lineup-filter{
-      margin: 0 0 2em 0;
+    .lineup-image::before {
+      content: "";
+      height: 0;
+      padding-bottom: 100%;
     }
 
-    .lineup-grid {
+    .lineup-image {
+      width: 100%;
+      height: 100%;
+      padding: 0;
+      background-color: $black;
+      background-size: 101%;
+      background-position: center;
+      background-repeat: no-repeat;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .lineup-title {
+      background-color: rgba(0, 0, 0, 0.6);
+      line-height: 1;
+      padding: 0.5em;
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      margin-bottom: -50%;
+      font-size: 0.7em;
+      max-width: 90%;
+    }
+    .lineup-artist-tag {
+      position: absolute;
+      left:0;
+      top:0;
       display: grid;
-      grid-template-columns: repeat(2, 50%); /* */
-      grid-auto-flow: dense;
-
-      .lineup-artist {
-        z-index: 0;
-      }
-
-      .lineup-image::before {
-        content: "";
-        height: 0;
-        padding-bottom: 100%;
-      }
-
-      .lineup-image {
-        width: 100%;
-        height: 100%;
-        padding: 0;
-        background-color: $black;
-        background-size: 101%;
-        background-position: center;
-        background-repeat: no-repeat;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-
-      .lineup-title {
-        background-color: rgba(0, 0, 0, 0.6);
-        line-height: 1;
-        padding: 0.5em;
-        border: 1px solid rgba(255, 255, 255, 0.6);
-        word-wrap: break-word;
-        overflow-wrap: break-word;
-        margin-bottom:-50%;
-        font-size:.7em;
-        max-width: 90%;
-      }
-      .lineup-artist-tag{
-        
-        span{
-          position: absolute;
-          font-size: 3em;
-        top:-18px;
-        left:0;
-        }
+      flex-direction: row;
+      span {
+        display: block;
+        line-height:.5;
+        font-size: 2.5em;
       }
     }
   }
-  
+}
 
 @include mq($removeMobileMenuBreakPoint) {
   .lineup-section {
@@ -74,7 +76,7 @@
           box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.6);
           border-radius: 4px;
         }
-        .lineup-title{
+        .lineup-title {
           transform: translateZ(22px);
           background-color: rgba(0, 0, 0, 0.7);
         }
@@ -89,10 +91,9 @@
 
       .lineup-title {
         max-width: 90%;
-        font-size: .9em;
+        font-size: 0.9em;
         transition: all 0.2s ease;
       }
     }
   }
-  
 }
