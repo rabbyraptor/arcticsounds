@@ -121,5 +121,11 @@ module.exports = {
   generate: {
     routes: dynamicRoutes,
     interval: 500
-  }
+  },
+
+  /* 
+  ** Layout transition configuration
+  */
+  pageTransition: 'layout',
+
 }
