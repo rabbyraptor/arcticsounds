@@ -125,16 +125,19 @@ export default {
             tags.push({ name: "Special Guest", color: "rgb(230, 85, 248)" });
             break;
           case 97:
-            tags.push({ name: "Nordic Playgrounds", color: "rgb(51, 127, 195)" });
+            tags.push({
+              name: "Nordic Playgrounds",
+              color: "rgb(51, 127, 195)"
+            });
             break;
           case 139:
-            tags.push({ name: "Workshop", color: null });
+            tags.push({ name: "Workshop", color: "black" });
             break;
           case 140:
-            tags.push({ name: "Network", color: null });
+            tags.push({ name: "Network", color: "black" });
             break;
           case 141:
-            tags.push({ name: "Talk", color: null });
+            tags.push({ name: "Talk", color: "black" });
             break;
           case 142:
             tags.push({ name: "Out and about", color: "rgb(200, 203, 204)" });
@@ -279,19 +282,42 @@ export default {
         }
       }
       return someLinks;
+    },
+    metaDescription() {
+      return (
+        "Join us for " +
+        this.artist.title +
+        ". The event will be held on " +
+        this.artistProgram.date_start.substr(8, 2) +
+        "/" +
+        this.artistProgram.date_start.substr(5, 2) +
+        " " +
+        this.artistProgram.time_start.substr(0, 5) +
+        " @ " +
+        this.artistProgram.venue.title +
+        "."
+      );
     }
   },
   components: {
     embeddedPlayer,
     svgIcon
   },
-  head(){
+  head() {
     return {
-      title: this.artistInfo.title,
-      //meta: [
-        //{ /* hid: "description", */ name: "Artist Presentation", content: "Description of " }
-      //]
-    }
+      title:
+        this.artist.title +
+        " | " +
+        this.artistProgram.time_start.substr(0, 5) +
+        " @ " +
+        this.artistProgram.venue.title,
+      meta: [
+        {
+          name: "description",
+          content: this.metaDescription
+        }
+      ]
+    };
   }
 };
 </script>
