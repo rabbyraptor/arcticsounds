@@ -284,6 +284,14 @@ export default {
   components: {
     embeddedPlayer,
     svgIcon
+  },
+  head(){
+    return {
+      title: this.artistInfo.title,
+      //meta: [
+        //{ /* hid: "description", */ name: "Artist Presentation", content: "Description of " }
+      //]
+    }
   }
 };
 </script>
