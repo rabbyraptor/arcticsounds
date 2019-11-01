@@ -114,6 +114,7 @@ module.exports = {
   ** Generate configuration
   */
   generate: {
-    routes: dynamicRoutes
+    routes: dynamicRoutes,
+    interval: 100
   }
 }
