@@ -43,7 +43,6 @@ export default {
   },
   watch: {
     $route() {
-      console.info(this.$route.name);
       this.checkRoute();
     }
   },
