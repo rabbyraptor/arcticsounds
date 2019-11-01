@@ -1,6 +1,6 @@
 <template>
   <section>
-    <artist-presentation :artist="this.artist"/>
+    <artist-presentation/>
   </section>
 </template>
 
@@ -14,13 +14,6 @@ export default {
       store.dispatch("program/getData")
     ];
     return await Promise.all(promises);
-  },
-  computed:{
-    artist() {
-      return this.$store.getters["artists/getArtistBySlug"](
-        this.$route.params.artist
-      );
-    },
   },
   components:{
     artistPresentation,

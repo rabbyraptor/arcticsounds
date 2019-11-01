@@ -80,9 +80,6 @@ import embeddedPlayer from "./embeddedPlayer";
 import svgIcon from "./svgIcon";
 
 export default {
-  props: {
-    artist: {}
-  },
   data() {
     return {
       goeventHash: process.env.GREENCOPPER_GOEVENT_HASH,
@@ -151,6 +148,11 @@ export default {
     },
     program() {
       return this.$store.getters["program/getProgram"];
+    },
+    artist() {
+      return this.$store.getters["artists/getArtistBySlug"](
+        this.$route.params.artist
+      );
     },
     artistProgram() {
       if (this.program) {
