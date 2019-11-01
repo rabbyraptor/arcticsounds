@@ -21,7 +21,12 @@ let dynamicRoutes = () => {
     for(let i in res.data){
       routes.push(res.data[i].slug)
     }  
-    return routes.map(slug => `/lineup/${slug}/`)
+    return routes.map(slug => {
+      return {
+        route: `/lineup/${slug}/`,
+        payload: slug
+      }
+    })
  })
 }
 
@@ -115,6 +120,6 @@ module.exports = {
   */
   generate: {
     routes: dynamicRoutes,
-    interval: 100
+    interval: 150
   }
 }
