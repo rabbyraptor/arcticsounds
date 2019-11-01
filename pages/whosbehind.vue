@@ -40,6 +40,17 @@ export default {
     nordicPlaygroundsSection,
     collaboratorsSection,
     sponsorsGrid
+  },
+  head() {
+    return {
+      title: "Who's Behind | Arctic Sounds",
+      meta: [
+        {
+          name: "description",
+          //content: this.metaDescription
+        }
+      ]
+    };
   }
 };
 </script>

@@ -19,5 +19,16 @@ export default {
   components: {
     lineupSection
   },
+  head() {
+    return {
+      title: "Line-Up | Arctic Sounds",
+      meta: [
+        {
+          name: "description",
+          //content: ""
+        }
+      ]
+    };
+  }
 };
 </script>

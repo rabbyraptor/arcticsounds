@@ -26,6 +26,17 @@ export default {
   },
   components: {
     faqSection
+  },
+  head() {
+    return {
+      title: "Backstage | Arctic Sounds",
+      meta: [
+        {
+          name: "description",
+          //content: this.metaDescription
+        }
+      ]
+    };
   }
 };
 </script>

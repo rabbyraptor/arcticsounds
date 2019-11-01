@@ -18,6 +18,17 @@ export default {
   },
   components: {
     programSection
+  },
+  head() {
+    return {
+      title: "Program | Arctic Sounds",
+      meta: [
+        {
+          name: "description",
+          //content: this.metaDescription
+        }
+      ]
+    };
   }
 };
 </script>
