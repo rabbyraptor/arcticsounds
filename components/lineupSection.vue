@@ -15,12 +15,12 @@
       <div v-for="artist in filteredArtists" :key="artist._id" class="lineup-artist">
         <nuxt-link :to="'/lineup/' + artist.slug">
           <div class="lineup-image" :style="backgroundImage(artist._id, artist.photo_suffix)">
+            <span class="lineup-artist-tag">
+              <span :style="{color: getTagName(tag).color}" v-for="tag in artist.tags">&#9679;</span>
+            </span>
             <span class="lineup-title">
               <h3>{{ artist.title }}</h3>
             </span>
-            <div class="lineup-artist-tag" v-for="tag in artist.tags">
-              <span :style="{color: getTagName(tag).color}">&#9679;</span>
-            </div>
           </div>
         </nuxt-link>
       </div>
@@ -36,7 +36,7 @@ import artistTag from "../components/artistTag";
 export default {
   mounted() {
     this.tiltImages();
-    this.filterByTag()
+    this.filterByTag();
   },
   updated() {
     this.tiltImages();
@@ -45,7 +45,7 @@ export default {
     return {
       goeventHash: process.env.GREENCOPPER_GOEVENT_HASH,
       activeFilter: null,
-      filteredArtists: this.artists,
+      filteredArtists: this.artists
     };
   },
   methods: {
@@ -61,11 +61,10 @@ export default {
         }
         this.activeFilter = id;
         this.filteredArtists = tagArray;
-      }
-      else {
+      } else {
         this.filteredArtists = this.artists;
         this.activeFilter = null;
-      }  
+      }
     },
     getTagName(tag) {
       switch (tag) {
@@ -83,13 +82,13 @@ export default {
           };
           break;
         case 139:
-          return { name: "Workshop", color: null, id: 139 };
+          return { name: "Workshop", color: "black", id: 139 };
           break;
         case 140:
-          return { name: "Network", color: null, id: 140 };
+          return { name: "Network", color: "black", id: 140 };
           break;
         case 141:
-          return { name: "Talk", color: null, id: 141 };
+          return { name: "Talk", color: "black", id: 141 };
           break;
         case 142:
           return {
@@ -116,16 +115,35 @@ export default {
         );
       }
     },
+    isMobileDevice() {
+      if (
+        navigator.userAgent.match(/Android/i) ||
+        navigator.userAgent.match(/webOS/i) ||
+        navigator.userAgent.match(/iPhone/i) ||
+        navigator.userAgent.match(/iPad/i) ||
+        navigator.userAgent.match(/iPod/i) ||
+        navigator.userAgent.match(/BlackBerry/i) ||
+        navigator.userAgent.match(/Windows Phone/i)
+      ) {
+        return true;
+      } else {
+        return false;
+      }
+    },
     tiltImages() {
-      VanillaTilt.init(document.querySelectorAll(".lineup-image"), {
-        max: 2.5,
-        perspective: 1200,
-        glare: true,
-        speed: 200,
-        gyroscope: false,
-        scale: 1.02,
-        "max-glare": 0.2
-      });
+      if (!this.isMobileDevice()) {
+        VanillaTilt.init(document.querySelectorAll(".lineup-image"), {
+          max: 2.5,
+          perspective: 1200,
+          glare: true,
+          speed: 200,
+          gyroscope: false,
+          scale: 1.02,
+          "max-glare": 0.2
+        });
+      } else {
+        alert("Is a mobile device!");
+      }
     }
   },
   computed: {
