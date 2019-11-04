@@ -26,10 +26,13 @@
   .artist-title {
     margin-top: 0.5em;
     font-size: 1.6em;
+    text-align: left;
   }
 
   .artist-style {
     font-size: 1.3em;
+    text-align: left;
+
   }
 
   .artist-description {
@@ -120,6 +123,11 @@
 }
 
 @include mq($removeMobileMenuBreakPoint) {
+  @at-root {
+    section{
+      padding-top:2.5%;
+    }
+  }
   .artist-presentation {
     display: grid;
     grid-template-columns: 60% 35%;
@@ -131,11 +139,13 @@
       }
     }
     .artist-title {
-      margin-top: 0.5em;
-      font-size: 2em;
+      margin-top: 0.4em;
+      font-size: 3em;
+      text-align: left;
     }
     .artist-style {
       font-size: 1.5em;
+      text-align: left;
     }
 
     .artist-description {
