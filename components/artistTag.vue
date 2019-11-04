@@ -13,7 +13,7 @@ export default {
   },
   data(){
     return{
-      opacity:{}
+      opacity:.5,
     }
   },
   watch:{
@@ -22,10 +22,10 @@ export default {
         this.opacity = 1;
       }
       else if (this.active == this.tag.id && this.opacity == 1){
-        this.opacity = 0;
+        this.opacity = 1;
       }
-      else {
-        this.opacity = .3;
+      else if (this.active != this.tag.id) {
+        this.opacity = .5;
       }
     }
   }

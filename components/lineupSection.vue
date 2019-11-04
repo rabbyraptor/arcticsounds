@@ -2,7 +2,7 @@
   <div class="lineup-section">
     <h1>Line-up 2019</h1>
     <div class="lineup-filter">
-      <h3>Filter by tag</h3>
+      <!-- <p>Filter by tag</p> -->
       <artist-tag
         v-for="tag in artistTags"
         :key="tag.id"
@@ -11,7 +11,7 @@
         :active="activeFilter"
       />
     </div>
-    <div class="lineup-grid">
+    <transition-group name="lineup-list" tag="div" class="lineup-grid">
       <div v-for="artist in filteredArtists" :key="artist._id" class="lineup-artist">
         <nuxt-link :to="'/lineup/' + artist.slug">
           <div class="lineup-image" :style="backgroundImage(artist._id, artist.photo_suffix)">
@@ -24,9 +24,12 @@
           </div>
         </nuxt-link>
       </div>
-    </div>
+    </transition-group>
   </div>
 </template>
+
+<style scoped>
+</style>
 
 <script>
 var _ = require("lodash");
@@ -45,7 +48,8 @@ export default {
     return {
       goeventHash: process.env.GREENCOPPER_GOEVENT_HASH,
       activeFilter: null,
-      filteredArtists: this.artists
+      filteredArtists: this.artists,
+      lineupAnimationDone: true
     };
   },
   methods: {
@@ -65,6 +69,7 @@ export default {
         this.filteredArtists = this.artists;
         this.activeFilter = null;
       }
+      this.lineupAnimationDone = true;
     },
     getTagName(tag) {
       switch (tag) {
@@ -141,8 +146,6 @@ export default {
           scale: 1.02,
           "max-glare": 0.2
         });
-      } else {
-        alert("Is a mobile device!");
       }
     }
   },
