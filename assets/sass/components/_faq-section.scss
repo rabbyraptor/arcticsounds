@@ -1,8 +1,6 @@
 .faq-section {
   h1 {
-    color: $font-light-grey;
     margin-bottom: 1em;
-    text-transform: uppercase;
   }
 
   h2 {
@@ -16,7 +14,6 @@
     .question {
       font-size: 1.3em;
       margin: 1.6em 0 0.2em 0;
-      color:$font-light-grey;
     }
     .answer {
       font-size: 0.9em;
@@ -57,37 +54,3 @@
     }
   }
 }
-/*
-    .faq-wrapper {
-      width: 100%;
-
-      .faq__nav div, .accordion__item div{
-        background-color: $white;
-        font-family: $font-standard;
-        font-weight: $font-standard-weight;
-      }
-
-      .faq__nav-item_active{
-        color:$black;
-      }
-
-      .accordion__title p{
-          font-size:1.2em;
-        color:$brand-color;
-      }
-
-      .accordion__toggle-button:before, .accordion__toggle-button:after{
-        background:$black;
-      }
-
-      .accordion__toggle-button_active:before, .accordion__toggle-button_active:after{
-        background:$brand-color;
-      }
-    }
-  }
-
-  .what-is-arctic-sounds{
-      li {
-          padding-top:1em;
-      }
-  }*/
