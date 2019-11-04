@@ -1,10 +1,12 @@
 h1{
-  color: $font-light-grey;
+  color: $white;
   text-transform: uppercase;
+  text-shadow: 3px 3px 1px $brand-color;
 }
 h2{
   color: $white;
   text-transform: uppercase;
+  text-shadow: 2px 2px 1px $brand-color;
 }
 h3{
   color: $white;
