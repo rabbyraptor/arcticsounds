@@ -1,15 +1,15 @@
 <template>
   <div>
-    <section class="full-width-section" id="frontpage-section">
+    <section class="full-width-section no-top-padding" id="frontpage-section">
       <frontpage-grid :content="frontpageGrid" />
     </section>
-    <section class="full-width-section">
+    <section class="full-width-section no-top-padding">
       <iceberg-section :content="icebergSection" />
     </section>
     <section>
       <instagram-section />
     </section>
-    <section class="full-width-section">
+    <section class="full-width-section no-top-padding">
       <countdown-section />
     </section>
   </div>

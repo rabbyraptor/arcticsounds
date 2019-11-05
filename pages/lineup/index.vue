@@ -1,5 +1,5 @@
 <template>
-    <section class="full-width-section">
+    <section class="no-side-padding-mobile">
       <lineup-section/>
     </section>
 </template>
