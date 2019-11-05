@@ -122,7 +122,7 @@ export default {
       }
     },
     tiltImages() {
-      if (!this.isMobileDevice) {
+      if (!this.isMobileDevice()) {
         VanillaTilt.init(document.querySelectorAll(".lineup-image"), {
           max: 2.5,
           perspective: 1200,
