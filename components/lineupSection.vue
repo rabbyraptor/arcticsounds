@@ -18,11 +18,14 @@
             <span class="lineup-artist-tag">
               <span :style="{color: getTagName(tag).color}" v-for="tag in artist.tags">&#9679;</span>
             </span>
-            <span class="lineup-title">
+            <span class="lineup-title mobile">
               <h3>{{ artist.title }}</h3>
             </span>
           </div>
         </nuxt-link>
+        <span class="lineup-title desktop">
+          <h3>{{ artist.title }}</h3>
+        </span>
       </div>
     </transition-group>
   </div>
@@ -48,8 +51,7 @@ export default {
     return {
       goeventHash: process.env.GREENCOPPER_GOEVENT_HASH,
       activeFilter: null,
-      filteredArtists: this.artists,
-      lineupAnimationDone: true
+      filteredArtists: this.artists
     };
   },
   methods: {
@@ -69,7 +71,6 @@ export default {
         this.filteredArtists = this.artists;
         this.activeFilter = null;
       }
-      this.lineupAnimationDone = true;
     },
     getTagName(tag) {
       switch (tag) {
@@ -120,6 +121,19 @@ export default {
         );
       }
     },
+    tiltImages() {
+      if (!this.isMobileDevice) {
+        VanillaTilt.init(document.querySelectorAll(".lineup-image"), {
+          max: 2.5,
+          perspective: 1200,
+          glare: true,
+          speed: 200,
+          gyroscope: false,
+          scale: 1.02,
+          "max-glare": 0.2
+        });
+      }
+    },
     isMobileDevice() {
       if (
         navigator.userAgent.match(/Android/i) ||
@@ -133,19 +147,6 @@ export default {
         return true;
       } else {
         return false;
-      }
-    },
-    tiltImages() {
-      if (!this.isMobileDevice()) {
-        VanillaTilt.init(document.querySelectorAll(".lineup-image"), {
-          max: 2.5,
-          perspective: 1200,
-          glare: true,
-          speed: 200,
-          gyroscope: false,
-          scale: 1.02,
-          "max-glare": 0.2
-        });
       }
     }
   },
