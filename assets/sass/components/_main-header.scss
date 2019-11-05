@@ -1,5 +1,5 @@
 .main-header {
-  height: 100px;
+  height: 90px;
   width: 100%;
   background-color: $black;
   font-size: 1.4em;
@@ -11,10 +11,10 @@
   padding: 0 5%;
 
   a .logo {
-    height: 86px;
-    width: 86px;
-    min-width: 86px;
-    margin: 7px 0 0 0;
+    height: 70px;
+    width: 70px;
+    min-width: 70px;
+    margin: 10px 0 0 0;
     //padding: 5% 0;
   }
   .nav-menu-wrapper {
@@ -48,6 +48,7 @@
     flex-flow: row;
     margin: 0 auto 0 auto;
     width: 100%;
+    max-width:1600px;
 
     ul {
       display: flex;
@@ -69,10 +70,9 @@
     a {
       color: $font-light-grey;
       text-transform: uppercase;
-      padding: 0 0.2em;
+      padding: 0;
       transition: color 0.2s;
       white-space: nowrap;
-      overflow: none;
     }
 
     a:hover {
