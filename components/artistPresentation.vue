@@ -22,6 +22,22 @@
 
     <div class="right-side">
       <div class="artist-info">
+        <h4 class="artist-show-time">
+          Time
+          <br />
+          <span>{{ artistProgram.time_start.substr(0, 5) }}</span>
+          <span v-if="artistProgram.time_end">- {{ artistProgram.time_end.substr(0, 5) }}</span>
+        </h4>
+        <h4 class="artist-show-time">
+          Date
+          <br />
+          <span>{{ getArtistDate }}</span>
+        </h4>
+        <h4>
+          Venue
+          <br />
+          <span>{{ artistProgram.venue.title }}</span>
+        </h4>
         <h4 class="artist-tags" v-if="artistTags.length != 0">
           Tags
           <br />
@@ -29,22 +45,6 @@
             <span v-if="tag.color" :style="{color: tag.color}">&#9679;</span>
             {{ tag.name }}
           </div>
-        </h4>
-        <h4>
-          Title
-          <br />
-          <span>{{ artist.title }}</span>
-        </h4>
-        <h4 class="artist-show-time">
-          Time
-          <br />
-          <span>{{ artistProgram.time_start.substr(0, 5) }}</span>
-          <span v-if="artistProgram.time_end">- {{ artistProgram.time_end.substr(0, 5) }}</span>
-        </h4>
-        <h4>
-          Venue
-          <br />
-          <span>{{ artistProgram.venue.title }}</span>
         </h4>
         <div class="artist-links" v-if="referralLinks.length != 0">
           <h4>
@@ -114,6 +114,17 @@ export default {
     }
   },
   computed: {
+    getArtistDate() {
+      return (
+        new Date(this.artistProgram.date_start).getDate() +
+        " " +
+        new Date(this.artistProgram.date_start).toLocaleString("default", {
+          month: "long"
+        }) +
+        " " +
+        new Date(this.artistProgram.date_start).getFullYear()
+      );
+    },
     artistTags() {
       let tags = [];
       for (let i in this.artist.tags) {
