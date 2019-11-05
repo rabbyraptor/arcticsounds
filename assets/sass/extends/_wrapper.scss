@@ -25,7 +25,6 @@ html {
   margin: 0 auto;
   text-align: center;
   padding-top: 100px;
-  width: 100%;
 }
 
 section {
@@ -37,10 +36,16 @@ section {
   padding:5% 0;
 }
 
-
+.no-side-padding-mobile{
+  padding-right: 0;
+  padding-left: 0;
+}
+.no-top-padding{
+  padding-top:0;
+  padding-bottom:0;
+}
 
 @include mq($removeMobileMenuBreakPoint) {
-  //max-width: 60em;
   .container {
     max-width:1600px;
     margin: 0 auto;
@@ -54,5 +59,9 @@ section {
   }
   #frontpage-section{
     padding-top:200px;
+  }
+  .no-side-padding-mobile{
+    padding-right: 5%;
+    padding-left: 5%;
   }
 }
