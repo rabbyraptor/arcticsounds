@@ -1,13 +1,9 @@
-  .program-section {
-    //margin: auto auto auto auto;
-  }
-
   .schedule{
     display:grid;
     width:100%;
-    grid-template-columns: 100%;
     grid-auto-flow: dense;
     text-align: left;
+    justify-content: center;
   }
 
   .weekday{
@@ -35,7 +31,10 @@
 
   .shows{
     padding:0 1em;
-
+    border-width: 0 0 1px 0;
+    border-color: $white;
+    border-style: solid;
+    margin-bottom:0em;
   }
 
   .show{
@@ -44,12 +43,9 @@
     position: relative;
     overflow-wrap: break-word;
     display: grid;
-    grid-template-columns: 80px 1fr;
+    grid-template-columns: 40px 1fr;
     column-gap: 1.5em;
-
-    .show-time{
-      white-space: nowrap;
-    }
+    border-bottom: 1px solid $white;
 
     .show-title{
       word-break: break-word;
@@ -58,13 +54,24 @@
       }
     }
   }
+
+  .show:last-of-type{
+    border:none;
+  }
   
 
 @include mq($removeMobileMenuBreakPoint) {
-  .shows{
-    padding: .5em 1em;
+  .weekday{
+    font-size:.8em;
   }
   .venue{
     padding: .5em 2em;
+  }
+  .shows{
+    border-width: 0 1px 1px 1px;
+    padding: 0em 2em;
+  }
+  .show{
+    padding: .8em 0em
   }
 }
