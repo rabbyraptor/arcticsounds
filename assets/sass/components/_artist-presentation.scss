@@ -1,6 +1,6 @@
 .artist-presentation {
   width: 100%;
-  
+
   .artist-image {
     width: 100%;
     background-repeat: no-repeat;
@@ -32,7 +32,6 @@
   .artist-style {
     font-size: 1.3em;
     text-align: left;
-
   }
 
   .artist-description {
@@ -71,7 +70,7 @@
 
         span {
           position: relative;
-          top:-1px;
+          top: -1px;
           margin-right: -1px;
         }
       }
@@ -124,19 +123,17 @@
 
 @include mq($removeMobileMenuBreakPoint) {
   @at-root {
-    section{
-      padding-top:2.5%;
+    section {
+      padding-top: 2.5%;
     }
   }
   .artist-presentation {
     display: grid;
     grid-template-columns: 60% 35%;
     justify-content: space-between;
-    .artist-image {
-      max-height: 500px;
-      img {
-        max-height: 500px;
-      }
+    .artist-image,
+    .artist-image img {
+      max-height: 520px;
     }
     .artist-title {
       margin-top: 0.4em;
