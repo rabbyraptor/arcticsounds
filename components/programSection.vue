@@ -19,7 +19,6 @@
             <div class="show" v-for="show in showsFromVenue(venue, day)">
               <h5 class="show-time">
                 <span>{{ get24hTime(show.start_time) }}</span>
-                <span v-if="show.end_time">- {{ show.end_time.substr(0, 5) }}</span>
               </h5>
               <h5 class="show-title">
                 <nuxt-link :to="'/lineup/' + show.slug">{{ show.title }}</nuxt-link>
