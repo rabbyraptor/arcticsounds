@@ -79,10 +79,12 @@
     .lineup-filter {
       width:100%;
       position: fixed;
-      top: 108px;
-      left:50%;
-      transform: translateX(-50%);
+      top: 104px;
+      left:0;
       justify-content: center;
+      align-items: center;
+      background-color: $white;
+      padding:.2em 0;
     }
 
     .lineup-grid {

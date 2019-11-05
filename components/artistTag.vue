@@ -13,7 +13,7 @@ export default {
   },
   data(){
     return{
-      opacity:.5,
+      opacity:1,
     }
   },
   watch:{
