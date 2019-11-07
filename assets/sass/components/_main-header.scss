@@ -15,7 +15,6 @@
     width: 70px;
     min-width: 70px;
     margin: 10px 0 0 0;
-    //padding: 5% 0;
   }
   .nav-menu-wrapper {
     display: none;
@@ -29,13 +28,11 @@
     justify-self: flex-end;
     background-color:$black;
     margin-top:-1px;
-    //font-size:.8em;
     padding:0.8em 0.8em 1em 0.8em;
     transition: opacity 0.2s linear;
     
     ul {
       flex-flow: column;
-      //margin:.5em;
 
       li{
         margin:0;
@@ -143,7 +140,7 @@
       width: 336px;
       margin-left: -100%;
       margin-top: -44px;
-      opacity: 0.8;
+      opacity: 1;
       padding: 0;
     }
     img {
@@ -240,7 +237,6 @@
       margin: -9px 0 0 0;
       height: 86px;
       width: 86px;
-      opacity: 1;
     }
     img {
       max-width: initial;
