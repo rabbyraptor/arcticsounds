@@ -1,15 +1,15 @@
 <template>
   <footer class="main-footer">
     <contact-info>
-      <li>
-        <h3>Arctic Sounds</h3>
-      </li>
+      <!-- <li>
+        <h4>Arctic Sounds</h4>
+      </li> -->
     </contact-info>
-    <navigation-menu>
+   <!--  <navigation-menu>
       <li>
-        <h3>Sitemap</h3>
+        <h4>Sitemap</h4>
       </li>
-    </navigation-menu>
+    </navigation-menu> -->
   </footer>
 </template>
 

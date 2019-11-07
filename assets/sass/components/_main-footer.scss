@@ -1,29 +1,25 @@
 .main-footer {
-  padding: 3em 5%;
+  padding: 2em 0;
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr;
   border-top: 4px solid $white;
-  box-sizing: border-box;
-  text-align: center;
+  text-align: left;
 
   ul {
-    justify-self:center;
+    justify-self: center;
   }
-  h3 {
+  h4 {
     color: $font-light-grey;
-    font-size: 1.4em;
-    line-height:1em;
   }
   li {
-      font-size:1em;
-      padding:.125em 0;
-      
+    padding: 0.125em 0;
+
     .svg-icon {
       fill: $font-light-grey;
-      height: 20px;
-      width: 20px;
-      padding-top: 4px;
+      height: 18px;
+      width: 18px;
+      margin-right: 4px;
+      margin-bottom: -2px;
+      padding-top: 0px;
     }
   }
   a {
@@ -32,29 +28,15 @@
 }
 @include mq($removeMobileMenuBreakPoint) {
   .main-footer {
-    min-height: 300px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
-    border-top: 4px solid $white;
-    text-align:left;
-
-    h3 {
-      color: $font-light-grey;
+    ul {
+      display: flex;
+      flex-direction: row;
     }
     li {
-        font-size:1.3em;
-        padding:.2em 0;
+      padding: 0.2em 1em;
       .svg-icon {
-        fill: $font-light-grey;
-        height: 20px;
-        width: 20px;
-        margin-right: 4px;
-        padding-top: 4px;
+        margin-right: 0;
       }
-    }
-    a {
-      color: $white;
     }
   }
 }
