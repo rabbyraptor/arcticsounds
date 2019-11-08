@@ -1,6 +1,6 @@
 <template>
   <ul class="navigation-menu-sub">
-    <li v-for="icon in socialIcons" :key="icon.name">
+    <li v-for="icon in socialIcons" :key="icon.name" @click="toggleBurgerMenu()">
       <a class="icon" :href="icon.link" :target="icon.target" v-html="icon.icon"></a>
     </li>
     <li>
@@ -10,7 +10,9 @@
 </template>
 
 <script>
+import toggleBurgerMenu from "./mobileBurgerMenu"
 export default {
+  mixins: [toggleBurgerMenu],
   data() {
     return {
       socialIcons: [
