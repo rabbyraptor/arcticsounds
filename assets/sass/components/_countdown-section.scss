@@ -9,8 +9,8 @@
   justify-content: center;
 
   h2 {
-    font-size: 1.4em;
-    line-height:.9em;
+    margin-bottom:.5em;
+    line-height:1;
   }
 
   h3 {
@@ -22,10 +22,6 @@
 }
 @include mq($removeMobileMenuBreakPoint) {
   .countdown-section {
-     h2 {
-      font-size: 2.6em;
-      line-height:1em;
-    }
     h3 {
       font-size: 4em;
     }
