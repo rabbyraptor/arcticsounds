@@ -4,7 +4,7 @@
       <a class="icon" :href="icon.link" :target="icon.target" v-html="icon.icon"></a>
     </li>
     <li>
-      <a href="#">ENG</a><span class="slash">/</span><a href="#">KAL</a>
+      <nuxt-link :to="switchLocalePath('en')">ENG</nuxt-link><span class="slash">/</span><nuxt-link :to="switchLocalePath('kl')">KAL</nuxt-link>
     </li>
   </ul>
 </template>

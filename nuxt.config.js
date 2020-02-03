@@ -2,7 +2,8 @@ const APP_ENV = process.env.APP_ENV || 'local';
 
 let modules = [
   '@nuxtjs/dotenv',
-  'nuxt-imagemin'
+  'nuxt-imagemin',
+  'nuxt-i18n'
 ];
 
 if (APP_ENV !== 'production') {
@@ -23,7 +24,7 @@ let dynamicRoutes = () => {
     }
     return routes.map(slug => {
       return {
-        route: `/lineup/${slug}/`,
+        route: localePath(`/lineup/${slug}/`),
         payload: slug
       }
     })
@@ -104,6 +105,22 @@ module.exports = {
   ** Nuxt.js modules
   */
   modules,
+
+  i18n: {
+    locales: ['en', 'kl'],
+    defaultLocale: 'en',
+    vueI18n: {
+      fallbackLocale: 'en',
+      messages: {
+        en: {
+          welcome: 'Welcome'
+        },
+        kl: {
+          welcome: 'Tikilluarit'
+        }
+      }
+    }
+  },
 
   env: {
     CTF_SPACE_ID: process.env.CTF_SPACE_ID || '',

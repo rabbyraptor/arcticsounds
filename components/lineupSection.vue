@@ -20,7 +20,7 @@
     </div>
     <transition-group name="lineup-list" tag="div" class="lineup-grid">
       <div v-for="artist in filteredArtists" :key="artist._id" class="lineup-artist">
-        <nuxt-link :to="'/lineup/' + artist.slug">
+        <nuxt-link :to="localePath('/lineup/' + artist.slug)">
           <div class="lineup-image" :style="backgroundImage(artist._id, artist.photo_suffix)">
             <span class="lineup-artist-tag">
               <span :style="{color: getTagName(tag).color}" v-for="tag in artist.tags">&#9679;</span>

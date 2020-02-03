@@ -1,7 +1,7 @@
 <template>
   <header class="main-header">
     <nav>
-      <logo v-if="this.$route.name == 'index'" @click.native="backToTop()" />
+      <logo v-if="this.$route.path == '/' || '/kl' || '/kl/'" @click.native="backToTop()" />
       <logo v-else />
       <mobile-burger-menu class="mobile-burger-menu" />
       <div class="nav-menu-wrapper">
@@ -51,7 +51,7 @@ export default {
   },
   methods:{
     checkRoute(){
-      if (this.$route.name != "index") {
+      if (this.$route.path != "/" && this.$route.path != "/kl/" && this.$route.path != "/kl") {
         this.headroom.unpin();
         this.headroom.freeze();
       }else{

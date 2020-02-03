@@ -2,11 +2,11 @@
   <ul>
     <slot></slot>
     <li>
-      <nuxt-link v-if="this.$route.name == 'index'" to="/" @click.native="toggleBurgerMenu(); backToTop()">Home</nuxt-link>
-      <nuxt-link v-else to="/" @click.native="toggleBurgerMenu();">Home</nuxt-link>
+      <nuxt-link v-if="this.$route.path == '/' || '/kl' || '/kl/'" :to="localePath('/')" @click.native="toggleBurgerMenu(); backToTop()">Home</nuxt-link>
+      <nuxt-link v-else :to="localePath('/')" @click.native="toggleBurgerMenu();">Home</nuxt-link>
     </li>
     <li v-for="page in pages" :key="page.name">
-      <nuxt-link :to="page.link" @click.native="toggleBurgerMenu()">{{ page.name }}</nuxt-link>
+      <nuxt-link :to="localePath(page.link)" @click.native="toggleBurgerMenu()">{{ page.name }}</nuxt-link>
     </li>
   </ul>
 </template>
