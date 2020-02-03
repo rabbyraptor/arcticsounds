@@ -24,7 +24,7 @@ let dynamicRoutes = () => {
     }
     return routes.map(slug => {
       return {
-        route: localePath(`/lineup/${slug}/`),
+        route: `/lineup/${slug}/`,
         payload: slug
       }
     })
