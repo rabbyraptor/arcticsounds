@@ -2,14 +2,21 @@
   <div class="lineup-section">
     <h1>Line-up 2019</h1>
     <div class="lineup-filter">
-      <!-- <p>Filter by tag</p> -->
-      <artist-tag
-        v-for="tag in artistTags"
-        :key="tag.id"
-        :tag="tag"
-        @click.native="filterByTag(tag.id)"
-        :active="activeFilter"
-      />
+      <p
+        class="artist-tag"
+        id="artist-tags-show-button"
+        @click="showTags = !showTags"
+      >Filter by tags</p>
+      <div class="artist-tags">
+        <artist-tag
+          v-for="tag in artistTags"
+          :key="tag.id"
+          :tag="tag"
+          @click.native="filterByTag(tag.id)"
+          :active="activeFilter"
+          v-show="showTags"
+        />
+      </div>
     </div>
     <transition-group name="lineup-list" tag="div" class="lineup-grid">
       <div v-for="artist in filteredArtists" :key="artist._id" class="lineup-artist">
@@ -51,7 +58,8 @@ export default {
     return {
       goeventHash: process.env.GREENCOPPER_GOEVENT_HASH,
       activeFilter: null,
-      filteredArtists: this.artists
+      filteredArtists: this.artists,
+      showTags: false
     };
   },
   methods: {
