@@ -17,17 +17,17 @@ if (APP_ENV !== 'production') {
 import axios from 'axios'
 let dynamicRoutes = () => {
   let routes = [];
- return axios.get('https://s3.amazonaws.com/goeventweb-static.greencopper.com/' + process.env.GREENCOPPER_GOEVENT_HASH + '/arcticsoundfestival-2019/data/eng/artists.json').then(res => {
-    for(let i in res.data){
+  return axios.get('https://s3.amazonaws.com/goeventweb-static.greencopper.com/' + process.env.GREENCOPPER_GOEVENT_HASH + '/arcticsoundfestival-2019/data/eng/artists.json').then(res => {
+    for (let i in res.data) {
       routes.push(res.data[i].slug)
-    }  
+    }
     return routes.map(slug => {
       return {
         route: `/lineup/${slug}/`,
         payload: slug
       }
     })
- })
+  })
 }
 
 module.exports = {
@@ -62,7 +62,11 @@ module.exports = {
       { property: 'og:image:alt', content: 'Arctic Sounds Logo' },
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'icon', type: 'image/png', href: '/favicon.ico' },
+      { rel: "apple-touch-icon", sizes: "180x180", href: "/apple-touch-icon.png" },
+      { rel: "icon", type: "image/png", sizes: "32x32", href: "/favicon-32x32.png" },
+      { rel: "icon", type: "image/png", sizes: "16x16", href: "/favicon-16x16.png" },
+      { rel: "manifest", href: "/site.webmanifest" },
       /* Google PLAY Smart Banner */
       { rel: 'preload', href: '/meta/css/smartbanner.min.css', as: 'style', onload: 'this.onload=null;this.rel="stylesheet"' },
     ],
@@ -75,7 +79,7 @@ module.exports = {
   /*
   ** Customize the progress-bar color
   */
-  loading: { 
+  loading: {
     color: '#7e959c'
   },
 
