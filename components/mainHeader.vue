@@ -1,7 +1,8 @@
 <template>
   <header class="main-header">
     <nav>
-      <logo />
+      <logo v-if="this.$route.name == 'index'" @click.native="backToTop()" />
+      <logo v-else />
       <mobile-burger-menu class="mobile-burger-menu" />
       <div class="nav-menu-wrapper">
         <navigation-menu />
@@ -21,8 +22,10 @@ import navigationMenu from "~/components/navigationMenu.vue";
 import navigationMenuSub from "~/components/navigationMenuSub.vue";
 import mobileBurgerMenu from "~/components/mobileBurgerMenu.vue";
 import Headroom from "headroom.js";
+import BackToTop from "./BackToTop";
 
 export default {
+  mixins: [BackToTop],
   data(){
     return{
       headroom:{}
