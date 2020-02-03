@@ -6,6 +6,9 @@
     <section class="full-width-section no-top-padding">
       <iceberg-section :content="icebergSection" />
     </section>
+    <section class="full-width-section no-top-padding">
+      <ticket-integration />
+    </section>
     <section>
       <instagram-section />
     </section>
@@ -18,6 +21,7 @@
 <script>
 import frontpageGrid from "~/components/frontpageGrid.vue";
 import icebergSection from "~/components/icebergSection.vue";
+import ticketIntegration from "~/components/ticketIntegration.vue";
 import instagramSection from "~/components/instagramSection.vue";
 import countdownSection from "~/components/countdownSection.vue";
 
@@ -41,9 +45,10 @@ export default {
   components: {
     frontpageGrid,
     icebergSection,
+    ticketIntegration,
     instagramSection,
     countdownSection
-  }
+  },
 };
 </script>
 
