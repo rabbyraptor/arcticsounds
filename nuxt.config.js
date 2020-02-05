@@ -95,6 +95,7 @@ module.exports = {
   ** Plugins to load before mounting the App
   */
   plugins: [
+    '@/plugins/main.js',
     '@/plugins/directives.js',
     '@/plugins/contentful.js',
     { src: '@/plugins/vueCountdown.js', mode: 'client' },
