@@ -148,6 +148,6 @@ module.exports = {
   /* 
   ** Layout transition configuration
   */
-  pageTransition: 'layout',
+  /* pageTransition: 'layout', */
 
 }
