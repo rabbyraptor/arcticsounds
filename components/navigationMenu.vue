@@ -23,7 +23,7 @@ export default {
         { name: "Program", link: "/program" },
         { name: "Who's Behind", link: "/whosbehind" },
         { name: "Backstage", link: "/backstage" },
-        { name: "Tickets", link: "/#tickets" }
+        { name: "Tickets", link: "/tickets" }
       ]
     };
   }
