@@ -4,20 +4,20 @@
       <div
         class="grid-image"
         v-for="image in leftImages"
-        :key="image.fields.title"
-        :style="{ backgroundImage: 'url(' + image.fields.image.fields.file.url + ')' }"
+        :key="detectLanguage(image.fields.title)"
+        :style="{ backgroundImage: 'url(' + image.fields.image.en.fields.file.en.url + ')' }"
       >
-        <h2>{{ image.fields.title }}</h2>
+        <h2>{{ detectLanguage(image.fields.title) }}</h2>
       </div>
     </div>
     <div class="right">
       <div
         class="grid-image"
         v-for="image in rightImages"
-        :key="image.fields.title"
-        :style="{ backgroundImage: 'url(' + image.fields.image.fields.file.url + ')' }"
+        :key="detectLanguage(image.fields.title)"
+        :style="{ backgroundImage: 'url(' + image.fields.image.en.fields.file.en.url + ')' }"
       >
-        <h2>{{ image.fields.title }}</h2>
+        <h2>{{ detectLanguage(image.fields.title) }}</h2>
       </div>
     </div>
   </div>
@@ -31,13 +31,13 @@ export default {
   computed: {
     leftImages() {
       let leftImages = this.content.filter(image => {
-        return image.fields.leftColumn == true;
+        return image.fields.leftColumn.en == true;
       });
       return leftImages;
     },
     rightImages() {
       let rightImages = this.content.filter(image => {
-        return image.fields.leftColumn != true;
+        return image.fields.leftColumn.en != true;
       });
       return rightImages;
     }

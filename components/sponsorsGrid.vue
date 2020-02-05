@@ -1,6 +1,10 @@
 <template>
   <div class="sponsors-grid">
-    <span>
+    <span v-if="this.$i18n.locale == 'kl'">
+      <h2>(GL) Arctic Sounds Sponsors</h2>
+      <p>(GL) A million thanks to our sponsors, without whom none of this would be possible!</p>
+    </span>
+    <span v-else>
       <h2>Arctic Sounds Sponsors</h2>
       <p>A million thanks to our sponsors, without whom none of this would be possible!</p>
     </span>

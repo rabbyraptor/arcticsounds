@@ -4,7 +4,8 @@
     <div class="schedule">
       <div class="day" v-for="day in sortedDates" :key="day">
         <div class="weekday">
-          <h2>{{ getWeekday(day) }} {{ day }}</h2>
+          <h2 v-if="i18n.locale == 'kl'">{{ getGreenlandicWeekday(day) }} {{ day }}</h2>
+          <h2 v-else>{{ getWeekday(day) }} {{ day }}</h2>
         </div>
         <div
           class="row"
@@ -87,6 +88,19 @@ export default {
       ];
       return days[d.getDay()];
     },
+    getGreenlandicWeekday(day) {
+      let d = new Date(day);
+      let days = [
+        "Sapaat",
+        "Ataasinngorneq",
+        "Marlunngorneq",
+        "Pingasunngorneq",
+        "Sisamanngorneq",
+        "Tallimanngorneq",
+        "Arfininngorneq"
+      ];
+      return days[d.getDay()];
+    },
     getMonthName(month) {
       let months = [
         "January",
@@ -136,6 +150,9 @@ export default {
         );
       }
       return sortedDates.sort();
+    },
+    i18n(){
+      return this.$i18n;
     }
   }
 };
