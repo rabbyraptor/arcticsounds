@@ -51,7 +51,7 @@ export default {
   },
   methods:{
     checkRoute(){
-      if (this.$route.path != "/" && this.$route.path != "/kl/" && this.$route.path != "/kl") {
+      if (this.$route.path != "/" && this.$route.path != "/kl" && this.$route.path != "/kl/") {
         this.headroom.unpin();
         this.headroom.freeze();
       }else{
