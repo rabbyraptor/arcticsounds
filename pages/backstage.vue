@@ -15,11 +15,11 @@ const client = createClient();
 export default {
   asyncData({ env }) {
     return Promise.all([
-      client.getEntries({ content_type: "faqSection" })
+      client.getEntries({ content_type: "faqSection", locale: "*" })
     ])
       .then(([faq]) => {
         return {
-          faqSection: faq.items,
+          faqSection: faq.items
         };
       })
       .catch(console.error);
@@ -32,7 +32,7 @@ export default {
       title: "Backstage | Arctic Sounds",
       meta: [
         {
-          name: "description",
+          name: "description"
           //content: this.metaDescription
         }
       ]

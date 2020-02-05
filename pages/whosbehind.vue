@@ -23,8 +23,8 @@ const client = createClient();
 export default {
   asyncData({ env }) {
     return Promise.all([
-      client.getEntries({ content_type: "nordicPlaygroundsSection" }),
-      client.getEntries({ content_type: "collaboratorsSection" }),
+      client.getEntries({ content_type: "nordicPlaygroundsSection", locale: "*" }),
+      client.getEntries({ content_type: "collaboratorsSection", locale: "*" }),
       client.getEntries({ content_type: "sponsorsGrid" })
     ])
       .then(([nordic, collabs, sponsors]) => {

@@ -1,23 +1,17 @@
 <template>
   <div class="collaborators-section">
     <h2>Arctic Sounds Collaborators</h2>
-    <div class="collaborators" v-for="collaborator in content" :key="collaborator.fields.title">
+    <div class="collaborators" v-for="collab in content">
       <div class="collaborator-image">
-        <a :href="collaborator.fields.link[0]" target="_blank">
-          <img :src="collaborator.fields.logo[0].fields.file.url" :alt="collaborator.fields.title" />
+        <div v-for="(logo, i) in collab.fields.logo.en">
+        <a :href="collab.fields.link.en[i]" target="_blank">
+          <img :src="logo.fields.file.en.url" :alt="detectLanguage(collab.fields.title)" />
         </a>
-        <div v-if="collaborator.fields.logo[1]">
-          <a :href="collaborator.fields.link[1]" target="_blank">
-            <img
-              :src="collaborator.fields.logo[1].fields.file.url"
-              :alt="collaborator.fields.title"
-            />
-          </a>
         </div>
       </div>
       <div class="collaborator-text-wrapper">
-        <h3 class="collaborator-title">{{ collaborator.fields.title }}</h3>
-        <p class="collaborator-text" v-html="collaborator.fields.text"></p>
+        <h3 class="collaborator-title">{{ detectLanguage(collab.fields.title) }}</h3>
+        <p class="collaborator-text" v-html="detectLanguage(collab.fields.text)"></p>
       </div>
     </div>
   </div>

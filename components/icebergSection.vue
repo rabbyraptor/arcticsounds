@@ -1,7 +1,7 @@
 <template>
   <div>
-    <div class="iceberg-section" :style="{ backgroundImage: 'url(' + content.image.fields.file.url + ')' }">
-      <p v-html="content.text" />
+    <div class="iceberg-section" :style="{ backgroundImage: 'url(' + content.image.en.fields.file.en.url + ')' }">
+      <p v-html="detectLanguage(content.text)" />
     </div>
   </div>
 </template>

@@ -31,8 +31,8 @@ const client = createClient();
 export default {
   asyncData({ env }) {
     return Promise.all([
-      client.getEntries({ content_type: "icebergSection" }),
-      client.getEntries({ content_type: "frontpageGrid" })
+      client.getEntries({ content_type: "icebergSection", locale:"*" }),
+      client.getEntries({ content_type: "frontpageGrid", locale:"*" })
     ])
       .then(([iceberg, fpgrid]) => {
         return {
