@@ -31,7 +31,7 @@ export default {
       headroom:{}
     }
   },
-  mounted() {
+  updated() {
     const header = document.querySelector("header");
     const options = {
       offset: 180,
