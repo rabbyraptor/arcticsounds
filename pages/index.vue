@@ -1,18 +1,18 @@
 <template>
   <div>
-    <section class="full-width-section no-top-padding" id="frontpage-section">
+    <section class="full-width-section no-top-padding no-side-padding-mobile" id="frontpage-section">
       <frontpage-grid :content="frontpageGrid" />
     </section>
-    <section class="full-width-section no-top-padding">
+    <section class="full-width-section no-top-padding no-side-padding-mobile">
       <iceberg-section :content="icebergSection" />
     </section>
-    <section class="full-width-section no-top-padding">
+    <section class="full-width-section no-top-padding no-side-padding-mobile">
       <ticket-integration />
     </section>
     <section>
       <instagram-section />
     </section>
-    <section class="full-width-section no-top-padding">
+    <section class="full-width-section no-top-padding no-side-padding-mobile">
       <countdown-section />
     </section>
   </div>
